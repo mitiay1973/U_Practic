@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
 
 namespace Up
 {
@@ -59,6 +60,7 @@ namespace Up
                         history_login[0].id = count_h + 1;
                         history_login[0].login = user;
                         history_login[0].date = DateTime.Now;
+                        history_login[0].ip = Dns.GetHostName();
                         Entities.GetContext().history.Add(history_login[0]);
                         Entities.GetContext().SaveChanges();
                         break;
@@ -77,6 +79,7 @@ namespace Up
                         history_login[0].id = count_h + 1;
                         history_login[0].login = user;
                         history_login[0].date = DateTime.Now;
+                        history_login[0].ip = Dns.GetHostName();
                         Entities.GetContext().history.Add(history_login[0]);
                         Entities.GetContext().SaveChanges();
                         break;
@@ -90,7 +93,7 @@ namespace Up
         }
         private void Reg_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            frame1.Navigate(new registr(frame1));
         }
     }
 }

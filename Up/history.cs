@@ -17,5 +17,6 @@ namespace Up
         public int id { get; set; }
         public string login { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+        public string ip { get; set; }
     }
 }

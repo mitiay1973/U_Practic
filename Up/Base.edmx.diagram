@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="P_prakt_SorokinModel.Results" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="P_prakt_SorokinModel.Service" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="P_prakt_SorokinModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="P_prakt_SorokinModel.users" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="P_prakt_SorokinModel.users" Width="1.5" PointX="0.875" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="P_prakt_SorokinModel.Workers" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="P_prakt_SorokinModel.history" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="P_prakt_SorokinModel.FK_Results_Service" ManuallyRouted="false" />

@@ -12,6 +12,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="login" Type="nvarchar(max)" />
           <Property Name="date" Type="datetime" />
+          <Property Name="ip" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Results">
           <Key>
@@ -51,7 +52,6 @@
           <Property Name="login" Type="nvarchar(max)" />
           <Property Name="password" Type="nvarchar(max)" />
           <Property Name="ip" Type="nvarchar(max)" />
-          <Property Name="lastenter" Type="date" />
         </EntityType>
         <EntityType Name="Workers">
           <Key>
@@ -168,7 +168,6 @@
           <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="lastenter" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_users" FromRole="users" ToRole="Results" />
         </EntityType>
         <EntityType Name="Workers">
@@ -192,6 +191,7 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Results_Service">
           <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
@@ -295,7 +295,6 @@
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="ip" ColumnName="ip" />
-                <ScalarProperty Name="lastenter" ColumnName="lastenter" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -316,6 +315,7 @@
           <EntitySetMapping Name="history">
             <EntityTypeMapping TypeName="P_prakt_SorokinModel.history">
               <MappingFragment StoreEntitySet="history">
+                <ScalarProperty Name="ip" ColumnName="ip" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="date" ColumnName="date" />
