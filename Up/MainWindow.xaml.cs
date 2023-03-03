@@ -23,6 +23,7 @@ namespace Up
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new avtoriz(MainFrame));
         }
     }
 }

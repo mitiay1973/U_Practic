@@ -20,9 +20,13 @@ namespace Up
     /// </summary>
     public partial class glavn : Page
     {
-        public glavn()
+        Frame frame1;
+        string user;
+        public glavn( string User,Frame frame)
         {
             InitializeComponent();
+            frame1 = frame;
+            user = User;
         }
     }
 }
