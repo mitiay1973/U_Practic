@@ -28,7 +28,8 @@ namespace Up
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new avtoriz(MainFrame));
+            DateTime dateTime = DateTime.Now;
+            MainFrame.Navigate(new avtoriz(MainFrame,dateTime));
             TickCounter = 150;
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMinutes(1d);

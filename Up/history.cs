@@ -18,5 +18,6 @@ namespace Up
         public string login { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public string ip { get; set; }
+        public Nullable<System.DateTime> block { get; set; }
     }
 }

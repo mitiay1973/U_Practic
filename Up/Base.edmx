@@ -13,6 +13,7 @@
           <Property Name="login" Type="nvarchar(max)" />
           <Property Name="date" Type="datetime" />
           <Property Name="ip" Type="nvarchar(max)" />
+          <Property Name="block" Type="datetime" />
         </EntityType>
         <EntityType Name="Results">
           <Key>
@@ -192,6 +193,7 @@
           <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="3" />
           <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="block" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_Results_Service">
           <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
@@ -315,6 +317,7 @@
           <EntitySetMapping Name="history">
             <EntityTypeMapping TypeName="P_prakt_SorokinModel.history">
               <MappingFragment StoreEntitySet="history">
+                <ScalarProperty Name="block" ColumnName="block" />
                 <ScalarProperty Name="ip" ColumnName="ip" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="login" ColumnName="login" />

@@ -22,10 +22,12 @@ namespace Up
     public partial class registr : Page
     {
         public Frame frame1;
-        public registr(Frame frame)
+        DateTime date;
+        public registr(Frame frame, DateTime d)
         {
             InitializeComponent();
             frame1 = frame;
+            date = d;
         }
         private void login_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -44,7 +46,7 @@ namespace Up
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            frame1.Navigate(new avtoriz(frame1));
+            frame1.Navigate(new avtoriz(frame1,date));
         }
 
         private void registration_MouseLeftButtonDown(object sender, RoutedEventArgs e)
@@ -62,15 +64,23 @@ namespace Up
                         if (pas == pas1)
                         {
                             List<Up.users> user = new List<Up.users>() { new users() };
+                            List<Up.history> h = new List<Up.history>() { new history() };
                             int count = Entities.GetContext().users.Count();
+                            int count_h = Entities.GetContext().history.Count();
                             user[0].id = count + 1;
                             user[0].login = log;
                             user[0].ip= Dns.GetHostName();
                             user[0].password = pas;
                             user[0].name = names;
                             Entities.GetContext().users.Add(user[0]);
+                            h[0].id=count_h+1;
+                            h[0].login=log;
+                            h[0].ip= Dns.GetHostName();
+                            h[0].date=DateTime.Now;
+                            h[0].block = DateTime.Now.AddMinutes(-30);
+                            Entities.GetContext().history.Add(h[0]);
                             Entities.GetContext().SaveChanges();
-                            frame1.Navigate(new avtoriz(frame1));
+                            frame1.Navigate(new avtoriz(frame1,date));
                         }
                         else
                         {
