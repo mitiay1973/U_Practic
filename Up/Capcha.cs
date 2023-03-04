@@ -76,7 +76,6 @@ namespace Practice
         {
             if (textBox1.Text == this.text)
             {
-                MessageBox.Show("Верно!");
                 pr++;
                 this.Close();
             }       
