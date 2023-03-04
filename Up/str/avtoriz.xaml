@@ -135,7 +135,13 @@
                      Width="520" 
                      Margin="0,296,0,344" 
                      FontSize="40" />
-
+        <TextBox Style="{DynamicResource TextBoxStyle1}" 
+                     x:Name="password1" 
+                     HorizontalAlignment="Center" 
+                     Height="60"
+                     Width="520" 
+                     Margin="0,296,0,344" 
+                     FontSize="40" />
         <TextBlock x:Name="Entre"
                    Text="Вход" 
                    TextDecorations="Underline" 
@@ -164,5 +170,8 @@
                    FontFamily="Bahnschrift" 
                    Cursor="Hand" 
                    MouseLeftButtonDown="Reg_MouseLeftButtonDown"/>
+        <Image x:Name="glas" HorizontalAlignment="Left" Height="33" Margin="818,310,0,0" VerticalAlignment="Top" Width="32" Source="/str/glas.png" MouseLeftButtonDown="glas_MouseLeftButtonDown" />
+        <Image x:Name="glas_p" HorizontalAlignment="Left" Height="33" Margin="818,310,0,0" VerticalAlignment="Top" Width="32"  MouseLeftButtonDown="glas_p_MouseLeftButtonDown" Source="/str/glas_p.png" />
+
     </Grid>
 </Page>

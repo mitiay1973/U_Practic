@@ -26,6 +26,8 @@ namespace Up
         public avtoriz(Frame frame)
         {
             InitializeComponent();
+            password1.Visibility = Visibility.Hidden;
+            glas_p.Visibility = Visibility.Hidden;
             frame1 = frame;
             date = DateTime.Now;
         }
@@ -161,6 +163,25 @@ namespace Up
         private void Reg_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             frame1.Navigate(new registr(frame1,date));
+        }
+
+
+        private void glas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            password.Visibility = Visibility.Hidden;
+            password1.Visibility = Visibility.Visible;
+            glas.Visibility = Visibility.Hidden;
+            glas_p.Visibility = Visibility.Visible;
+            password1.Text = password.Password;
+        }
+
+        private void glas_p_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            password.Visibility = Visibility.Visible;
+            password1.Visibility = Visibility.Hidden;
+            glas.Visibility = Visibility.Visible;
+            glas_p.Visibility = Visibility.Hidden;
+            password.Password = password1.Text;
         }
     }
 }
