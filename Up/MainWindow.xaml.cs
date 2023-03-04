@@ -21,61 +21,13 @@ namespace Up
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer _timer;
-
-        public static readonly DependencyProperty TickCounterProperty = DependencyProperty.Register(
-            "TickCounter", typeof(int), typeof(MainWindow), new PropertyMetadata(default(int)));
+       
         public MainWindow()
         {
             InitializeComponent();
-            DateTime dateTime = DateTime.Now;
-            MainFrame.Navigate(new avtoriz(MainFrame,dateTime));
-            TickCounter = 150;
-            _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromMinutes(1d);
-            _timer.Tick += new EventHandler(Timer_Tick);
-            _timer.Start();
+            MainFrame.Navigate(new avtoriz(MainFrame));
+            
         }
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-        public int TickCounter
-        {
-            get { return (int)GetValue(TickCounterProperty); }
-            set { SetValue(TickCounterProperty, value); }
-        }
-        public int soxr = 0;
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-
-            if (--TickCounter <= 0)
-            {
-                var timer = (DispatcherTimer)sender;
-                timer.Stop();
-                if(soxr==0)
-                {
-                    if (MessageBox.Show("Чтобы закончить работу и закрыть кабинет на кварцевание нажмите да, если хотите продолжить работу на 5 минут нажмите нет", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
-                    {
-                        TickCounter = 5;
-                        _timer = new DispatcherTimer();
-                        _timer.Interval = TimeSpan.FromMinutes(1d);
-                        _timer.Tick += new EventHandler(Timer_Tick);
-                        _timer.Start();
-                        soxr = 1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Закрытие программы");
-                        Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Закрытие программы");
-                    Close();
-                }
-            }
-        }
+       
     }
 }

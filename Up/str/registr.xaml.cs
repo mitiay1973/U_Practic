@@ -46,7 +46,7 @@ namespace Up
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            frame1.Navigate(new avtoriz(frame1,date));
+            frame1.Navigate(new avtoriz(frame1));
         }
 
         private void registration_MouseLeftButtonDown(object sender, RoutedEventArgs e)
@@ -80,7 +80,7 @@ namespace Up
                             h[0].block = DateTime.Now.AddMinutes(-30);
                             Entities.GetContext().history.Add(h[0]);
                             Entities.GetContext().SaveChanges();
-                            frame1.Navigate(new avtoriz(frame1,date));
+                            frame1.Navigate(new avtoriz(frame1));
                         }
                         else
                         {

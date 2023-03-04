@@ -23,11 +23,11 @@ namespace Up
     {
         Frame frame1;
         DateTime date;
-        public avtoriz(Frame frame, DateTime d)
+        public avtoriz(Frame frame)
         {
             InitializeComponent();
             frame1 = frame;
-            date = d;
+            date = DateTime.Now;
         }
         private void login_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -72,7 +72,6 @@ namespace Up
                                 }
                                 if (DateTime.Now < historys[j].block || t <= DateTime.Now)
                                 {
-                                    frame1.Navigate(new glavn(worker[i].login, frame1));
                                     vx = 1;
                                     int count_h = Entities.GetContext().history.Count();
                                     history_login[0].id = count_h + 1;
@@ -89,6 +88,7 @@ namespace Up
                                     }
                                     Entities.GetContext().history.Add(history_login[0]);
                                     Entities.GetContext().SaveChanges();
+                                    frame1.Navigate(new glavn(worker[i].login, frame1));
                                     break;
                                 }
                                 else
@@ -120,7 +120,6 @@ namespace Up
                                 }
                                     if (DateTime.Now < historys[j].block || t <= DateTime.Now)
                                     {
-                                        frame1.Navigate(new glavn(Users[i].login, frame1));
                                         vx = 1;
                                         int count_h = Entities.GetContext().history.Count();
                                         history_login[0].id = count_h + 1;
@@ -137,7 +136,8 @@ namespace Up
                                         }
                                         Entities.GetContext().history.Add(history_login[0]);
                                         Entities.GetContext().SaveChanges();
-                                        break;
+                                    frame1.Navigate(new glavn(Users[i].login, frame1));
+                                    break;
                                     }
                                     else
                                     {
