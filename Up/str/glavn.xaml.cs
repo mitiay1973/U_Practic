@@ -30,6 +30,7 @@ namespace Up
         List<Up.history> historys = new List<Up.history>();
         List<Up.Workers> workers = new List<Up.Workers>();
         List<Up.Service> services = new List<Up.Service>();
+        List<Up.Results> result = new List<Up.Results>();
         public glavn( string User,Frame frame)
         {
             InitializeComponent();
@@ -44,6 +45,11 @@ namespace Up
                 {
                     history.Visibility = Visibility.Visible;
                     Add.Visibility = Visibility.Visible;
+                }
+                if (workers[i].login == user && workers[i].dolgnost == "Лаборант")
+                {
+                    result = Entities.GetContext().Results.ToList();
+
                 }
             }
             int count_hh = Entities.GetContext().history.Count();
