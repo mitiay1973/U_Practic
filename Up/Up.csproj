@@ -80,6 +80,9 @@
     <Compile Include="history.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Compile Include="History_vxod.xaml.cs">
+      <DependentUpon>History_vxod.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Results.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
     <Compile Include="Workers.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Page Include="History_vxod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="str\glavn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

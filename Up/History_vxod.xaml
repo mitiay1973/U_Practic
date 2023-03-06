@@ -1,0 +1,24 @@
+﻿<Window x:Class="Up.History_vxod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Up"
+        mc:Ignorable="d"
+        Title="История входа" Height="450" Width="325" MaxHeight="450" MinHeight="450" MaxWidth="325" MinWidth="325" Icon="/logo.png">
+    <Grid >
+        <DataGrid x:Name="Dgrid" AutoGenerateColumns="False" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=10}" Width="325" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Адрес компьютера" Binding="{Binding ip}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата и вермя входа" Binding="{Binding date}" ></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -28,12 +28,22 @@ namespace Up
         Frame frame1;
         string user;
         List<Up.history> historys = new List<Up.history>();
+        List<Up.Workers> workers = new List<Up.Workers>();
         List<Up.Service> services = new List<Up.Service>();
         public glavn( string User,Frame frame)
         {
             InitializeComponent();
             frame1 = frame;
             user = User;
+            history.Visibility = Visibility.Collapsed;
+            workers = Entities.GetContext().Workers.ToList();
+            for (int i = 0; i < workers.Count; i++)
+            {
+                if(workers[i].login==user && workers[i].dolgnost== "Администратор")
+                {
+                    history.Visibility = Visibility.Visible;
+                }
+            }
             int count_hh = Entities.GetContext().history.Count();
             historys = Entities.GetContext().history.ToList();
             int time = 0;
@@ -157,6 +167,12 @@ namespace Up
                     Environment.Exit(0);
                 }
             }
+        }
+
+        private void history_Click(object sender, RoutedEventArgs e)
+        {
+            History_vxod history_Vxod = new History_vxod();
+            history_Vxod.Show();
         }
     }
 }

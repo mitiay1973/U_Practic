@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Up"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
-      Title="glavn">
+      Title="Главная">
 
     <Grid>
         <TextBox x:Name="Time" Text="{Binding TickCounter,
@@ -70,7 +70,7 @@
             <ListView Grid.Row="1"
 x:Name="LViewTours"
 ItemsSource="{Binding Service}"
-Margin="0,32,0,55"
+Margin="0,32,0,188"
 Visibility="Visible"
 Cursor="Hand">
 
@@ -130,17 +130,18 @@ FontSize="30"/>
             </ListView>
         </Grid>
         <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,646,0,0">
-                <TextBlock Name="txtPrev1" Uid="prev1" Text="&lt;&lt;" MouseDown="GoPage_MouseDown"></TextBlock>
-                <TextBlock Name="txtPrev" Uid="prev" Text=" &lt;" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txt1" Uid="1" Text="{Binding  Path = NPage[0]}" Visibility="{Binding Visible[0]}" FontWeight="{Binding Bold[0]}" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txt2" Uid="2" Text="{Binding  Path = NPage[1]}" Visibility="{Binding Visible[1]}" FontWeight="{Binding Bold[1]}" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txt3" Uid="3" Text="{Binding  Path = NPage[2]}" Visibility="{Binding Visible[2]}" FontWeight="{Binding Bold[2]}" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txt4" Uid="4" Text="{Binding  Path = NPage[3]}" Visibility="{Binding Visible[3]}" FontWeight="{Binding Bold[3]}" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txt5" Uid="5" Text="{Binding  Path = NPage[4]}" Visibility="{Binding Visible[4]}" FontWeight="{Binding Bold[4]}" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txtNext" Uid="next" Text=" &gt;" MouseDown="GoPage_MouseDown"/>
-                <TextBlock Name="txtNext1" Uid="next1" Text=" &gt;&gt;" MouseDown="GoPage_MouseDown"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="995,493,0,0">
+                <TextBlock Name="txtPrev1" Uid="prev1" Text="&lt;&lt;" MouseDown="GoPage_MouseDown" FontSize="20"></TextBlock>
+                <TextBlock Name="txtPrev" Uid="prev" Text=" &lt;" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txt1" Uid="1" Text="{Binding  Path = NPage[0]}" Visibility="{Binding Visible[0]}" FontWeight="{Binding Bold[0]}" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txt2" Uid="2" Text="{Binding  Path = NPage[1]}" Visibility="{Binding Visible[1]}" FontWeight="{Binding Bold[1]}" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txt3" Uid="3" Text="{Binding  Path = NPage[2]}" Visibility="{Binding Visible[2]}" FontWeight="{Binding Bold[2]}" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txt4" Uid="4" Text="{Binding  Path = NPage[3]}" Visibility="{Binding Visible[3]}" FontWeight="{Binding Bold[3]}" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txt5" Uid="5" Text="{Binding  Path = NPage[4]}" Visibility="{Binding Visible[4]}" FontWeight="{Binding Bold[4]}" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txtNext" Uid="next" Text=" &gt;" MouseDown="GoPage_MouseDown" FontSize="20"/>
+                <TextBlock Name="txtNext1" Uid="next1" Text=" &gt;&gt;" MouseDown="GoPage_MouseDown" FontSize="20"/>
             </StackPanel>
+            <Button x:Name="history" Content="История входа" HorizontalAlignment="Left" Margin="846,632,0,0" VerticalAlignment="Top" Click="history_Click"/>
         </Grid>
     </Grid>
 </Page>
