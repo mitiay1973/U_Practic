@@ -32,6 +32,7 @@
                     <TextBox Width="225"
                          Name="TBoxSearch"
                          FontSize="15"
+                        TextChanged="TextBox_TextChanged"
                          HorizontalAlignment="Left"
                          Margin="10,0,0,0"></TextBox>
                 </StackPanel>
@@ -47,7 +48,7 @@
                           DisplayMemberPath="Title"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="AddMaska"
+                    <TextBlock x:Name="Add"
                            Text="Добавить"
                            Margin="100,5,0,0"
                            FontFamily="Bahnschrift"

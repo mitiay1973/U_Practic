@@ -35,6 +35,7 @@ namespace Up
             InitializeComponent();
             frame1 = frame;
             user = User;
+            Add.Visibility= Visibility.Collapsed;
             history.Visibility = Visibility.Collapsed;
             workers = Entities.GetContext().Workers.ToList();
             for (int i = 0; i < workers.Count; i++)
@@ -42,6 +43,7 @@ namespace Up
                 if(workers[i].login==user && workers[i].dolgnost== "Администратор")
                 {
                     history.Visibility = Visibility.Visible;
+                    Add.Visibility = Visibility.Visible;
                 }
             }
             int count_hh = Entities.GetContext().history.Count();
@@ -71,13 +73,21 @@ namespace Up
             sp.CountPage = 3;
             sp.Countlist = count;
             LViewTours.ItemsSource = services.Skip(0).Take(sp.CountPage).ToList();
-            // kolvo_zapice(3);
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Update();
         }
         Strelki sp = new Strelki();
+        private void Update()
+        {
+            var currentProducts = Entities.GetContext().Service.ToList();
+            currentProducts = currentProducts.Where(p => p.Service1.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            sp.CountPage = 3;
+            sp.Countlist = currentProducts.Count;
+            LViewTours.ItemsSource = currentProducts.Skip(0).Take(sp.CountPage).ToList();
+        }
+
         private void kolvo_zapice(int kol)
         {
             try
