@@ -13,6 +13,134 @@
                                   RelativeSource={RelativeSource FindAncestor,
                                                                  AncestorType={x:Type local:glavn}}}" HorizontalAlignment="Left" Margin="913,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="58" FontSize="22" Foreground="Black" TextChanged="TextBox_TextChanged" IsEnabled="False" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}"/>
         <Label Content="Мин до кварцевания" Margin="958,16,0,0" HorizontalAlignment="Left"   VerticalAlignment="Top" Height="40" Width="250" FontSize="22" Foreground="Black"  IsEnabled="False" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <WrapPanel Orientation="Horizontal" 
+                   HorizontalAlignment="Center" 
+                   Width="1200">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Введите название для поиска: " 
+                           Width="175" TextAlignment="Right" 
+                           Foreground="White"
+                           FontStyle="Normal"
+                           FontFamily="Bahnschrift"
+                           HorizontalAlignment="Left" 
+                           Margin="50,5,0,0"></TextBlock>
+                    <TextBox Width="225"
+                         Name="TBoxSearch"
+                         FontSize="15"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Выберите тип: "
+                           Foreground="White"
+                           Width="175"
+                           Margin="0,5,10,0"
+                           FontFamily="Bahnschrift"
+                           TextAlignment="Right"></TextBlock>
+                    <ComboBox Width="225"
+                          Name="ComboType"
+                          DisplayMemberPath="Title"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="AddMaska"
+                           Text="Добавить"
+                           Margin="100,5,0,0"
+                           FontFamily="Bahnschrift"
+                           FontSize="15" 
+                           FontWeight="Bold" 
+                           TextDecorations="Underline"
+                           Foreground="White" 
+                           Cursor="Hand" />
+                    <TextBlock x:Name="Back"
+                           Text="Назад"
+                           Margin="100,5,0,0"
+                           FontFamily="Bahnschrift"
+                           FontSize="15" 
+                           FontWeight="Bold" 
+                           TextDecorations="Underline"
+                           Foreground="White" 
+                           Cursor="Hand" />
+                </StackPanel>
+            </WrapPanel>
+            <ListView Grid.Row="1"
+x:Name="LViewTours"
+ItemsSource="{Binding Service}"
+Margin="0,32,0,55"
+Visibility="Visible"
+Cursor="Hand">
 
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment"
+Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1"
+BorderBrush="Black"
+CornerRadius="5">
+
+                            <Grid Margin="0"
+HorizontalAlignment="Stretch">
+                                <Grid.ToolTip>
+                                    <ToolTip>
+                                        Перейти
+                                    </ToolTip>
+                                </Grid.ToolTip>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="1"
+Margin="15"
+Orientation="Horizontal">
+                                    <Image Source="/Image/zagl.jpg"
+Height="100" Width="160"
+HorizontalAlignment="Left"/>
+                                    <StackPanel Grid.Column="1"
+Margin="0"
+Orientation="Vertical">
+                                        <TextBlock Text="{Binding Service1}"
+Name="Ser"
+FontFamily="Monotype Corsiva"
+FontSize="30"/>
+                                        <TextBlock Text="{Binding Price, StringFormat={}{0:N2} РУБ}"
+FontFamily="Monotype Corsiva"
+FontSize="30"/>
+                                        <TextBlock Text="{Binding MaterialString}"
+FontFamily="Monotype Corsiva"
+FontSize="30"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,646,0,0">
+                <TextBlock Name="txtPrev1" Uid="prev1" Text="&lt;&lt;" MouseDown="GoPage_MouseDown"></TextBlock>
+                <TextBlock Name="txtPrev" Uid="prev" Text=" &lt;" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txt1" Uid="1" Text="{Binding  Path = NPage[0]}" Visibility="{Binding Visible[0]}" FontWeight="{Binding Bold[0]}" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txt2" Uid="2" Text="{Binding  Path = NPage[1]}" Visibility="{Binding Visible[1]}" FontWeight="{Binding Bold[1]}" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txt3" Uid="3" Text="{Binding  Path = NPage[2]}" Visibility="{Binding Visible[2]}" FontWeight="{Binding Bold[2]}" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txt4" Uid="4" Text="{Binding  Path = NPage[3]}" Visibility="{Binding Visible[3]}" FontWeight="{Binding Bold[3]}" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txt5" Uid="5" Text="{Binding  Path = NPage[4]}" Visibility="{Binding Visible[4]}" FontWeight="{Binding Bold[4]}" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txtNext" Uid="next" Text=" &gt;" MouseDown="GoPage_MouseDown"/>
+                <TextBlock Name="txtNext1" Uid="next1" Text=" &gt;&gt;" MouseDown="GoPage_MouseDown"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

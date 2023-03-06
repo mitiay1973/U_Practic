@@ -86,6 +86,7 @@
     <Compile Include="Service.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Compile Include="Strelki.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>

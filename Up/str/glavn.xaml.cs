@@ -28,6 +28,7 @@ namespace Up
         Frame frame1;
         string user;
         List<Up.history> historys = new List<Up.history>();
+        List<Up.Service> services = new List<Up.Service>();
         public glavn( string User,Frame frame)
         {
             InitializeComponent();
@@ -37,27 +38,88 @@ namespace Up
             historys = Entities.GetContext().history.ToList();
             int time = 0;
             for (int j = count_hh - 1; j >= 0; j--)
-            {          
+            {
                 if (historys[j].login == user)
                 {
                     DateTime b = (DateTime)historys[j].block;
                     DateTime d = (DateTime)historys[j].date;
-                    int h = b.Hour-d.Hour;
-                    int m = b.Minute-d.Minute;
+                    int h = b.Hour - d.Hour;
+                    int m = b.Minute - d.Minute;
                     time = 60 * h + m;
                     break;
                 }
             }
+            DataContext = sp;
             DateTime dateTime = DateTime.Now;
             TickCounter = time;
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMinutes(1d);
             _timer.Tick += new EventHandler(Timer_Tick);
             _timer.Start();
+            int count = Entities.GetContext().Service.Count();
+            services = Entities.GetContext().Service.ToList();
+            sp.CountPage = 3;
+            sp.Countlist = count;
+            LViewTours.ItemsSource = services.Skip(0).Take(sp.CountPage).ToList();
+            // kolvo_zapice(3);
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+        Strelki sp = new Strelki();
+        private void kolvo_zapice(int kol)
+        {
+            try
+            {
+                sp.CountPage= Convert.ToInt32(kol); // если в текстовом поле есnь значение, присваиваем его свойству объекта, которое хранит количество записей на странице
+            }
+            catch
+            {
+                sp.CountPage = services.Count; // если в текстовом поле значения нет, присваиваем свойству объекта, которое хранит количество записей на странице количество элементов в списке
+            }
+            sp.Countlist = services.Count;  // присваиваем новое значение свойству, которое в объекте отвечает за общее количество записей
+            LViewTours.ItemsSource = services.Skip(0).Take(sp.CountPage).ToList();  // отображаем первые записи в том количестве, которое равно CountPage
+            sp.CurrentPage = 1; // текущая страница - это страница 1
+        }
+
+        private void GoPage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock tb = (TextBlock)sender;
+
+            switch (tb.Uid)  // определяем, куда конкретно было сделано нажатие
+            {
+                case "prev":
+                    sp.CurrentPage--;
+                    break;
+                case "next":
+                    sp.CurrentPage++;
+                    break;
+                case "prev1":
+                    sp.CurrentPage = 1;
+                    break;
+                case "next1":
+                    {
+                        List<Service> fl = Entities.GetContext().Service.ToList();
+                        int a = fl.Count;
+                        int b = Convert.ToInt32(3);
+
+                        if (a % b == 0)
+                        {
+                            sp.CurrentPage = a / b;
+                        }
+                        else
+                        {
+                            sp.CurrentPage = a / b + 1;
+                        }
+
+                    }
+                    break;
+                default:
+                    sp.CurrentPage = Convert.ToInt32(tb.Text);
+                    break;
+            }
+            LViewTours.ItemsSource = services.Skip(sp.CurrentPage * sp.CountPage - sp.CountPage).Take(sp.CountPage).ToList();
         }
         public int TickCounter
         {
