@@ -35,4 +35,5 @@
 ![image](https://user-images.githubusercontent.com/101105217/223866138-41055ea8-8953-408f-9bf1-c6393876883d.png)
 
 Для админа существует доступ к отдельному окну с историей входов:
+
 ![image](https://user-images.githubusercontent.com/101105217/223866282-8551c17e-782e-4c52-8666-88b9f54ca755.png)
