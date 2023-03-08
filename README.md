@@ -20,3 +20,19 @@
 ![image](https://user-images.githubusercontent.com/101105217/222164538-037e307c-a785-4f4b-86e4-6084cd90be96.png)
 
 ![image](https://user-images.githubusercontent.com/101105217/222164658-4ef92ab0-ae94-4088-beda-04d3be8f98d1.png)
+
+## День 2
+Для приложения было разработано окно регистрации, выглядещее следующим образом:
+![image](https://user-images.githubusercontent.com/101105217/223865107-165b1c6a-9c2e-4754-8e52-dde8a59831e2.png)
+
+Для пароля существует переключатель показа видимости:
+![image](https://user-images.githubusercontent.com/101105217/223865202-f8d582be-ea8f-4d40-9e91-123c4d03495f.png)
+
+В случае окончания действия таймера и блокировки системы на 30 минут для кварцевания при входе выдается сообщение:
+![image](https://user-images.githubusercontent.com/101105217/223865905-00b052b8-60dc-42a9-abf7-9d3301f6df7b.png)
+
+На главной странице присутствует страничный вывод данных, а также вышесказанный таймер:
+![image](https://user-images.githubusercontent.com/101105217/223866138-41055ea8-8953-408f-9bf1-c6393876883d.png)
+
+Для админа существует доступ к отдельному окну с историей входов:
+![image](https://user-images.githubusercontent.com/101105217/223866282-8551c17e-782e-4c52-8666-88b9f54ca755.png)
