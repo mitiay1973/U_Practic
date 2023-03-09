@@ -50,16 +50,25 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="Add"
                            Text="Добавить"
-                           Margin="100,5,0,0"
+                           Margin="50,5,0,0"
                            FontFamily="Bahnschrift"
                            FontSize="15" 
                            FontWeight="Bold" 
                            TextDecorations="Underline"
                            Foreground="White" 
                            Cursor="Hand" />
+                    <TextBlock x:Name="analiz"
+                           Text="Анализы"
+                           Margin="50,5,0,0"
+                           FontFamily="Bahnschrift"
+                           FontSize="15" 
+                           FontWeight="Bold" 
+                           TextDecorations="Underline"
+                           Foreground="White" 
+                           Cursor="Hand" PreviewMouseLeftButtonDown="analiz_PreviewMouseLeftButtonDown" />
                     <TextBlock x:Name="Back"
                            Text="Назад"
-                           Margin="100,5,0,0"
+                           Margin="50,5,0,0"
                            FontFamily="Bahnschrift"
                            FontSize="15" 
                            FontWeight="Bold" 
@@ -131,7 +140,7 @@ FontSize="30"/>
             </ListView>
         </Grid>
         <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="995,493,0,0">
+            <StackPanel x:Name="stack" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="995,493,0,0">
                 <TextBlock Name="txtPrev1" Uid="prev1" Text="&lt;&lt;" MouseDown="GoPage_MouseDown" FontSize="20"></TextBlock>
                 <TextBlock Name="txtPrev" Uid="prev" Text=" &lt;" MouseDown="GoPage_MouseDown" FontSize="20"/>
                 <TextBlock Name="txt1" Uid="1" Text="{Binding  Path = NPage[0]}" Visibility="{Binding Visible[0]}" FontWeight="{Binding Bold[0]}" MouseDown="GoPage_MouseDown" FontSize="20"/>

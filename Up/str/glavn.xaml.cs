@@ -190,5 +190,11 @@ namespace Up
             History_vxod history_Vxod = new History_vxod();
             history_Vxod.Show();
         }
+
+        private void analiz_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            LViewTours.Visibility = Visibility.Hidden;
+            stack.Visibility = Visibility.Hidden;
+        }
     }
 }
