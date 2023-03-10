@@ -294,6 +294,7 @@ namespace Up
             LViewTours.Visibility = Visibility.Visible;
             analiz.Visibility = Visibility.Visible;
             LViewresult.Visibility = Visibility.Hidden;
+            TBoxSearch.Text = "";
             Update();
             Servis.Visibility = Visibility.Collapsed;
         }
@@ -302,12 +303,12 @@ namespace Up
         {
             if (LViewTours.Visibility == Visibility.Visible)
             {
-
+                frame1.Navigate(new add_service(user, frame1));
             }
 
             else
             {
-
+                frame1.Navigate(new add_result(user, frame1));
             }
         }
 
@@ -315,7 +316,7 @@ namespace Up
         {
             if(rol!=0)
             {
-                
+                frame1.Navigate(new upd_service(user, frame1));
             }
         }
 
@@ -323,7 +324,7 @@ namespace Up
         {
             if (rol != 0)
             {
-
+                frame1.Navigate(new upd_result(user, frame1));
             }
         }
     }
