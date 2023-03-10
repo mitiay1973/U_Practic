@@ -51,6 +51,7 @@ namespace Up
             worker = Entities.GetContext().Workers.ToList();
             Users = Entities.GetContext().users.ToList();
             historys = Entities.GetContext().history.ToList();
+            int ch1=0;
             for (int i = 0; i < count_w; i++)
             {
                 if (worker[i].login == user)
@@ -95,10 +96,30 @@ namespace Up
                                     break;
                                 }
                             }
+                            else
+                            {
+                                ch1++;
+                            }
+
+                        }
+                        if(ch1==count_hh)
+                        {
+                            vx = 1;
+                            int count_h = Entities.GetContext().history.Count();
+                            history_login[0].id = count_h + 1;
+                            history_login[0].login = user;
+                            history_login[0].date = DateTime.Now;
+                            history_login[0].ip = Dns.GetHostName();
+                                history_login[0].block = date.AddHours(2.5);
+                            Entities.GetContext().history.Add(history_login[0]);
+                            Entities.GetContext().SaveChanges();
+                            frame1.Navigate(new glavn(worker[i].login, frame1));
+                            break;
                         }
                     }
                 }
             }
+            ch1 = 0;
             for (int i = 0; i < count; i++)
             {
                 if (Users[i].login == user)
@@ -133,7 +154,7 @@ namespace Up
                                     }
                                     Entities.GetContext().history.Add(history_login[0]);
                                     Entities.GetContext().SaveChanges();
-                                    frame1.Navigate(new glavn(Users[i].login, frame1));
+                                    frame1.Navigate(new glavn(user, frame1));
                                     break;
                                 }
                                 else
@@ -143,8 +164,25 @@ namespace Up
                                     break;
                                 }
                             }
+                            else
+                            {
+                                ch1++;
+                            }
 
-
+                        }
+                        if (ch1 == count_hh)
+                        {
+                            vx = 1;
+                            int count_h = Entities.GetContext().history.Count();
+                            history_login[0].id = count_h + 1;
+                            history_login[0].login = user;
+                            history_login[0].date = DateTime.Now;
+                            history_login[0].ip = Dns.GetHostName();
+                                history_login[0].block = date.AddHours(2.5);
+                            Entities.GetContext().history.Add(history_login[0]);
+                            Entities.GetContext().SaveChanges();
+                            frame1.Navigate(new glavn(user, frame1));
+                            break;
                         }
                     }
                 }

@@ -83,9 +83,6 @@
     <Compile Include="History_vxod.xaml.cs">
       <DependentUpon>History_vxod.xaml</DependentUpon>
     </Compile>
-    <Compile Include="str\Laborant.xaml.cs">
-      <DependentUpon>Laborant.xaml</DependentUpon>
-    </Compile>
     <Compile Include="str\Result.xaml.cs">
       <DependentUpon>Result.xaml</DependentUpon>
     </Compile>
@@ -106,10 +103,6 @@
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
     <Page Include="History_vxod.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="str\Laborant.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

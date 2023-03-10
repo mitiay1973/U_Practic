@@ -31,11 +31,14 @@ namespace Up
         List<Up.Workers> workers = new List<Up.Workers>();
         List<Up.Service> services = new List<Up.Service>();
         List<Up.Results> result = new List<Up.Results>();
+        public int rol = 0;
         public glavn( string User,Frame frame)
         {
             InitializeComponent();
             frame1 = frame;
             user = User;
+            LViewresult.Visibility = Visibility.Collapsed;
+            Servis.Visibility = Visibility.Collapsed;
             Add.Visibility= Visibility.Collapsed;
             history.Visibility = Visibility.Collapsed;
             workers = Entities.GetContext().Workers.ToList();
@@ -45,11 +48,11 @@ namespace Up
                 {
                     history.Visibility = Visibility.Visible;
                     Add.Visibility = Visibility.Visible;
+                    rol = 1;
                 }
                 if (workers[i].login == user && workers[i].dolgnost == "Лаборант")
                 {
-                    result = Entities.GetContext().Results.ToList();
-
+                    rol = 2;
                 }
             }
             int count_hh = Entities.GetContext().history.Count();
@@ -92,6 +95,25 @@ namespace Up
             sp.CountPage = 3;
             sp.Countlist = currentProducts.Count;
             LViewTours.ItemsSource = currentProducts.Skip(0).Take(sp.CountPage).ToList();
+            var currentResult = Entities.GetContext().Results.ToList();
+
+            for (int i = 0; i < currentResult.Count; i++)
+            {
+                if (currentResult[i].Workers.login != user && currentResult[i].users.login != user)
+                {
+                    currentResult.RemoveAt(i);
+                    i--;
+                }
+            }
+            if(rol!=2)
+            {
+                currentResult = currentResult.Where(p => p.Workers.name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            }
+            else
+            {
+                currentResult = currentResult.Where(p => p.users.name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            }
+          LViewresult.ItemsSource = currentResult.ToList();
         }
 
         private void kolvo_zapice(int kol)
@@ -195,6 +217,62 @@ namespace Up
         {
             LViewTours.Visibility = Visibility.Hidden;
             stack.Visibility = Visibility.Hidden;
+            analiz.Visibility = Visibility.Collapsed;
+            LViewresult.Visibility = Visibility.Visible;
+            Servis.Visibility = Visibility.Visible;
+            result = Entities.GetContext().Results.ToList();
+            List<users> use = new List<users>();
+            TBoxSearch.Text = "";
+            result = Entities.GetContext().Results.ToList();
+            use = Entities.GetContext().users.ToList();
+            int counts1 = Entities.GetContext().Results.Count();
+            if(rol==2)
+            {
+                for (int i = 0; i < counts1; i++)
+                {
+                    if (result[i].Workers.login != user)
+                    {
+                        result.RemoveAt(i);
+                        i--;
+                        counts1--;
+                    }
+                }
+            }
+            if (rol == 0)
+            {
+                for (int i = 0; i < counts1; i++)
+                {
+                    if (result[i].users.login != user)
+                    {
+                        result.RemoveAt(i);
+                        i--;
+                        counts1--;
+                    }
+                }
+            }
+            LViewresult.ItemsSource = result;
+        }
+
+        private void Servis_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            LViewTours.Visibility = Visibility.Visible;
+            stack.Visibility = Visibility.Visible;
+            analiz.Visibility = Visibility.Visible;
+            LViewresult.Visibility = Visibility.Hidden;
+            Servis.Visibility = Visibility.Collapsed;
+        }
+
+        private void Add_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (LViewTours.Visibility == Visibility.Visible)
+            {
+
+            }
+
+            else
+            {
+
+            }
         }
     }
 }
