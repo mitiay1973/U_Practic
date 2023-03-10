@@ -105,50 +105,47 @@
                FontSize="40"
                Height="60"
                Width="294"
-               Margin="180,98,0,542"
+               Margin="186,116,0,524"
                HorizontalAlignment="Left"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
                FontFamily="Bahnschrift"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
-                 x:Name="login" 
-                 TextWrapping="Wrap" 
-                 TextChanged="login_TextChanged" 
+                 x:Name="ServiceA" 
                  Height="60"
                  Width="520" 
-                 Margin="511,98,169,542" 
-                 FontSize="40" 
-                 TextAlignment="Left"/>
+                 Margin="517,116,163,524" 
+                 FontSize="40" />
         <Label Content="Введите цену." 
                FontSize="40"
                Height="60"
                HorizontalAlignment="Left"
                Width="272" 
-               Margin="191,262,0,378"
+               Margin="197,280,0,360"
                Foreground="White" 
                FontFamily="Bahnschrift"/>
 
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
-                     x:Name="password1" 
+                     x:Name="PriceA" 
                      HorizontalAlignment="Left" 
                      Height="60"
                      Width="520" 
-                     Margin="511,262,0,378" 
+                     Margin="517,280,0,360" 
                      FontSize="40" />
-        <TextBlock x:Name="Entre"
+        <TextBlock x:Name="AddS"
                    Text="Добавить" 
                    TextDecorations="Underline" 
                    TextAlignment="Center"
                    TextWrapping="WrapWithOverflow"
-                   HorizontalAlignment="Center"
+                   HorizontalAlignment="Left"
                    Width="240"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="0,387,0,247" 
+                   FontSize="50" Margin="486,405,0,229" 
                    FontFamily="Bahnschrift" 
-                   MouseLeftButtonDown="Entre_MouseLeftButtonDown"
-                   Cursor="Hand"/>
+                  
+                   Cursor="Hand" MouseLeftButtonDown="AddS_MouseLeftButtonDown"/>
     </Grid>
 
 </Page>

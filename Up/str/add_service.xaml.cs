@@ -28,5 +28,25 @@ namespace Up
             frame1 = frame;
             user = User;
         }
+
+        private void AddS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(ServiceA.Text!="" && PriceA.Text!="")
+            {
+                try
+                {
+                    List<Service> services = new List<Service> { new Service() };
+                    services[0].Service1 = ServiceA.Text;
+                    services[0].Price = Convert.ToDouble(PriceA.Text);
+                    Entities.GetContext().Service.Add(services[0]);
+                    Entities.GetContext().SaveChanges();
+                    frame1.Navigate(new glavn(user,frame1));
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Проверьте формат введенных данных");
+                }
+            }
+        }
     }
 }

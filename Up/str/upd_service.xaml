@@ -112,9 +112,8 @@
                FontStyle="Normal" 
                FontFamily="Bahnschrift"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
-                 x:Name="login" 
+                 x:Name="Service_Upd" 
                  TextWrapping="Wrap" 
-                 TextChanged="login_TextChanged" 
                  Height="60"
                  Width="520" 
                  Margin="511,98,169,542" 
@@ -130,7 +129,7 @@
                FontFamily="Bahnschrift" RenderTransformOrigin="0.767,0.61"/>
 
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
-                     x:Name="password1" 
+                     x:Name="Price_upd" 
                      HorizontalAlignment="Left" 
                      Height="60"
                      Width="520" 
@@ -147,8 +146,7 @@
                    Foreground="White"
                    FontSize="50" Margin="360,414,0,220" 
                    FontFamily="Bahnschrift" 
-                   MouseLeftButtonDown="Entre_MouseLeftButtonDown"
-                   Cursor="Hand"/>
+                   Cursor="Hand" MouseLeftButtonDown="UpdateS_MouseLeftButtonDown"/>
         <TextBlock x:Name="DeleteS"
             Text="Удалить" 
             TextDecorations="Underline" 
@@ -160,7 +158,6 @@
             Foreground="White"
             FontSize="50" Margin="665,414,0,220" 
             FontFamily="Bahnschrift" 
-            MouseLeftButtonDown="Entre_MouseLeftButtonDown"
-            Cursor="Hand"/>
+            Cursor="Hand" MouseLeftButtonDown="DeleteS_MouseLeftButtonDown"/>
     </Grid>
 </Page>

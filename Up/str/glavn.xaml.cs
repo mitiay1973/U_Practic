@@ -312,11 +312,13 @@ namespace Up
             }
         }
 
-        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private async void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(rol!=0)
             {
-                frame1.Navigate(new upd_service(user, frame1));
+                await Task.Delay(100);
+                object itemm = LViewTours.SelectedItem;
+                frame1.Navigate(new upd_service( user, frame1, itemm));
             }
         }
 
