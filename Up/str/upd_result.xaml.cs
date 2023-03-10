@@ -22,11 +22,13 @@ namespace Up
     {
         Frame frame1;
         string user;
-        public upd_result(string User, Frame frame)
+        object item;
+        public upd_result(string User, Frame frame, object itemm)
         {
             InitializeComponent();
             frame1 = frame;
             user = User;
+            item = itemm;
         }
     }
 }
