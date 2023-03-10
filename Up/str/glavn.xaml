@@ -92,7 +92,7 @@ x:Name="LViewTours"
 ItemsSource="{Binding Service}"
 Margin="0,32,0,188"
 Visibility="Visible"
-Cursor="Hand">
+Cursor="Hand" >
 
 
                 <ListView.ItemContainerStyle>
@@ -102,14 +102,14 @@ Value="Stretch"/>
                     </Style>
                 </ListView.ItemContainerStyle>
 
-                <ListView.ItemTemplate>
+                <ListView.ItemTemplate >
                     <DataTemplate>
                         <Border BorderThickness="1"
 BorderBrush="Black"
 CornerRadius="5">
 
                             <Grid Margin="0"
-HorizontalAlignment="Stretch">
+HorizontalAlignment="Stretch" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                                 <Grid.ToolTip>
                                     <ToolTip>
                                         Перейти
@@ -170,7 +170,7 @@ BorderBrush="Black"
 CornerRadius="5">
 
                             <Grid Margin="0"
-HorizontalAlignment="Stretch">
+HorizontalAlignment="Stretch" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1">
                                 <Grid.ToolTip>
                                     <ToolTip>
                                         Перейти

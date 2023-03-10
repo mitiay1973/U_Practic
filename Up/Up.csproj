@@ -66,6 +66,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="str\add_result.xaml.cs">
+      <DependentUpon>add_result.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="str\add_service.xaml.cs">
+      <DependentUpon>add_service.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,12 +102,26 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Compile Include="str\upd_service.xaml.cs">
+      <DependentUpon>upd_service.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="str\upd_result.xaml.cs">
+      <DependentUpon>upd_result.xaml</DependentUpon>
+    </Compile>
     <Compile Include="users.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
     <Compile Include="Workers.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Page Include="str\add_result.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="str\add_service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="History_vxod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +173,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="str\upd_service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="str\upd_result.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

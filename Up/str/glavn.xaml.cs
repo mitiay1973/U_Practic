@@ -32,19 +32,19 @@ namespace Up
         List<Up.Service> services = new List<Up.Service>();
         List<Up.Results> result = new List<Up.Results>();
         public int rol = 0;
-        public glavn( string User,Frame frame)
+        public glavn(string User, Frame frame)
         {
             InitializeComponent();
             frame1 = frame;
             user = User;
             LViewresult.Visibility = Visibility.Collapsed;
             Servis.Visibility = Visibility.Collapsed;
-            Add.Visibility= Visibility.Collapsed;
+            Add.Visibility = Visibility.Collapsed;
             history.Visibility = Visibility.Collapsed;
             workers = Entities.GetContext().Workers.ToList();
             for (int i = 0; i < workers.Count; i++)
             {
-                if(workers[i].login==user && workers[i].dolgnost== "Администратор")
+                if (workers[i].login == user && workers[i].dolgnost == "Администратор")
                 {
                     history.Visibility = Visibility.Visible;
                     Add.Visibility = Visibility.Visible;
@@ -52,6 +52,7 @@ namespace Up
                 }
                 if (workers[i].login == user && workers[i].dolgnost == "Лаборант")
                 {
+                    Add.Visibility = Visibility.Visible;
                     rol = 2;
                 }
             }
@@ -105,7 +106,7 @@ namespace Up
                     i--;
                 }
             }
-            if(rol!=2)
+            if (rol != 2)
             {
                 currentResult = currentResult.Where(p => p.Workers.name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
             }
@@ -113,7 +114,7 @@ namespace Up
             {
                 currentResult = currentResult.Where(p => p.users.name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
             }
-          LViewresult.ItemsSource = currentResult.ToList();
+            LViewresult.ItemsSource = currentResult.ToList();
         }
 
 
@@ -197,9 +198,9 @@ namespace Up
                 }
                 LViewresult.ItemsSource = result.Skip(sp.CurrentPage * sp.CountPage - sp.CountPage).Take(sp.CountPage).ToList();
             }
-           
+
         }
-       
+
 
         public int TickCounter
         {
@@ -257,7 +258,7 @@ namespace Up
             result = Entities.GetContext().Results.ToList();
             use = Entities.GetContext().users.ToList();
             int counts1 = Entities.GetContext().Results.Count();
-            if(rol==2)
+            if (rol == 2)
             {
                 for (int i = 0; i < counts1; i++)
                 {
@@ -305,6 +306,22 @@ namespace Up
             }
 
             else
+            {
+
+            }
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(rol!=0)
+            {
+                
+            }
+        }
+
+        private void Grid_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            if (rol != 0)
             {
 
             }
