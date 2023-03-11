@@ -327,7 +327,7 @@ namespace Up
             if (rol != 0)
             {
                 await Task.Delay(100);
-                object itemm = LViewTours.SelectedItem;
+                object itemm = LViewresult.SelectedItem;
                 frame1.Navigate(new upd_result(user, frame1, itemm));
             }
         }

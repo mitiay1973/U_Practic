@@ -110,14 +110,6 @@
                FontWeight="Normal" 
                FontStyle="Normal" 
                FontFamily="Bahnschrift"/>
-        <TextBox Style="{DynamicResource TextBoxStyle1}" 
-                 x:Name="Patient_ADD" 
-                 TextWrapping="Wrap" 
-                 Height="60"
-                 Width="520" 
-                 Margin="511,68,169,572" 
-                 FontSize="40" 
-                 TextAlignment="Left"/>
         <Label Content="Услуга." 
                FontSize="40"
                Height="60"
@@ -126,14 +118,6 @@
                Margin="195,262,0,378"
                Foreground="White" 
                FontFamily="Bahnschrift"/>
-
-        <TextBox Style="{DynamicResource TextBoxStyle1}" 
-                     x:Name="Service_ADD" 
-                     HorizontalAlignment="Left" 
-                     Height="60"
-                     Width="520" 
-                     Margin="511,262,0,378" 
-                     FontSize="40" />
         <TextBlock x:Name="Update_R"
                    Text="Обновить" 
                    TextDecorations="Underline" 
@@ -145,28 +129,13 @@
                    Foreground="White"
                    FontSize="50" Margin="317,571,0,63" 
                    FontFamily="Bahnschrift" 
-                   Cursor="Hand"/>
+                   Cursor="Hand" MouseLeftButtonDown="Update_R_MouseLeftButtonDown"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
-            x:Name="Laborant_ADD" 
-            TextWrapping="Wrap" 
-            Height="60"
-            Width="520" 
-            Margin="511,162,169,478" 
-            FontSize="40" 
-            TextAlignment="Left"/>
-        <TextBox Style="{DynamicResource TextBoxStyle1}" 
-            x:Name="Result_ADD" 
+            x:Name="Result_Upd" 
             HorizontalAlignment="Left" 
             Height="60"
             Width="520" 
             Margin="511,350,0,290" 
-            FontSize="40" />
-        <TextBox Style="{DynamicResource TextBoxStyle1}" 
-            x:Name="Date_ADD" 
-            HorizontalAlignment="Left" 
-            Height="60"
-            Width="520" 
-            Margin="511,446,0,194" 
             FontSize="40" />
         <Label Content="Лаборант." 
             FontSize="40"
@@ -205,7 +174,11 @@
             Foreground="White"
             FontSize="50" Margin="704,571,0,63" 
             FontFamily="Bahnschrift" 
-            Cursor="Hand"/>
+            Cursor="Hand" MouseLeftButtonDown="Delete_R_MouseLeftButtonDown"/>
+        <DatePicker Name="Date_Upd" HorizontalAlignment="Left" Margin="544,464,0,0" VerticalAlignment="Top" Height="65" Width="389"/>
+        <ComboBox Name="Patient_Upd" HorizontalAlignment="Left" Margin="550,68,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name"/>
+        <ComboBox x:Name="Laborant_Upd" HorizontalAlignment="Left" Margin="550,162,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name"/>
+        <ComboBox x:Name="Service_Upd" HorizontalAlignment="Left" Margin="550,262,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="Service1"/>
     </Grid>
 
 </Page>

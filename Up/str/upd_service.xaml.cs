@@ -67,7 +67,15 @@ namespace Up
 
         private void DeleteS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            for (int i = 0; i < services.Count; i++)
+            {
+                if (services[i].Service1 == item.GetType().GetProperty("Service1").GetValue(item))
+                {
+                    Entities.GetContext().Service.Remove(services[i]);
+                    Entities.GetContext().SaveChanges();
+                    frame1.Navigate(new glavn(user, frame1));
+                }
+            }
         }
     }
 }
