@@ -101,7 +101,7 @@
             <ListView Grid.Row="1"
 x:Name="LViewTours"
 ItemsSource="{Binding Service}"
-Margin="0,32,0,188"
+Margin="0,32,0,86"
 Visibility="Visible"
 Cursor="Hand" >
 
@@ -145,7 +145,8 @@ Orientation="Vertical">
                                         <TextBlock Text="{Binding Service1}"
 Name="Ser"
 FontFamily="Monotype Corsiva"
-FontSize="30"/>
+FontSize="30"
+Height="67"/>
                                         <TextBlock Text="{Binding Price, StringFormat={}{0:N2} РУБ}"
 FontFamily="Monotype Corsiva"
 FontSize="30"/>
@@ -162,7 +163,7 @@ FontSize="30"/>
             <ListView Grid.Row="1"
 x:Name="LViewresult"
 ItemsSource="{Binding Service}"
-Margin="0,32,0,188"
+Margin="0,32,0,86"
 Visibility="Visible"
 Cursor="Hand">
 
@@ -222,7 +223,7 @@ FontSize="30"/>
             </ListView>
         </Grid>
         <Grid Grid.Row="3">
-            <StackPanel x:Name="stack" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="995,493,0,0">
+            <StackPanel x:Name="stack" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="994,587,0,0">
                 <TextBlock Name="txtPrev1" Uid="prev1" Text="&lt;&lt;" MouseDown="GoPage_MouseDown" FontSize="20"></TextBlock>
                 <TextBlock Name="txtPrev" Uid="prev" Text=" &lt;" MouseDown="GoPage_MouseDown" FontSize="20"/>
                 <TextBlock Name="txt1" Uid="1" Text="{Binding  Path = NPage[0]}" Visibility="{Binding Visible[0]}" FontWeight="{Binding Bold[0]}" MouseDown="GoPage_MouseDown" FontSize="20"/>

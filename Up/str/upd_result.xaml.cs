@@ -104,5 +104,10 @@ namespace Up
                 }
             }
         }
+
+        private void back_upd(object sender, MouseButtonEventArgs e)
+        {
+            frame1.Navigate(new glavn(user, frame1));
+        }
     }
 }

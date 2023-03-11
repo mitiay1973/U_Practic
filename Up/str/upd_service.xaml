@@ -101,40 +101,40 @@
     </Page.Resources>
 
     <Grid>
-        <Label Content="Услуга." 
+        <Label Content="Услуга" 
                FontSize="40"
                Height="60"
-               Width="147"
-               Margin="243,160,0,0"
+               Width="152"
+               Margin="318,156,0,0"
                HorizontalAlignment="Left"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                  x:Name="Service_Upd" 
                  TextWrapping="Wrap" 
                  Height="60"
                  Width="520" 
-                 Margin="459,160,221,0" 
+                 Margin="534,156,0,0" 
                  FontSize="40" 
-                 TextAlignment="Left" VerticalAlignment="Top"/>
-        <Label Content="Цена." 
+                 TextAlignment="Left" VerticalAlignment="Top" FontFamily="Comic Sans MS" HorizontalAlignment="Left"/>
+        <Label Content="Цена" 
                FontSize="40"
                Height="60"
                HorizontalAlignment="Left"
-               Width="113" 
-               Margin="260,324,0,0"
+               Width="116" 
+               Margin="336,0,0,0"
                Foreground="White" 
-               FontFamily="Bahnschrift" RenderTransformOrigin="0.767,0.61" VerticalAlignment="Top"/>
+               FontFamily="Comic Sans MS" RenderTransformOrigin="0.767,0.61" VerticalAlignment="Center"/>
 
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                      x:Name="Price_upd" 
                      HorizontalAlignment="Left" 
                      Height="60"
                      Width="520" 
-                     Margin="459,324,0,0" 
-                     FontSize="40" VerticalAlignment="Top" />
+                     Margin="534,0,0,0" 
+                     FontSize="40" VerticalAlignment="Center" FontFamily="Comic Sans MS" />
         <TextBlock x:Name="UpdateS"
                    Text="Обновить" 
                    TextDecorations="Underline" 
@@ -144,8 +144,8 @@
                    Width="240"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="308,476,0,0" 
-                   FontFamily="Bahnschrift" 
+                   FontSize="50" Margin="414,470,0,0" 
+                   FontFamily="Comic Sans MS" 
                    Cursor="Hand" MouseLeftButtonDown="UpdateS_MouseLeftButtonDown" Height="66" VerticalAlignment="Top"/>
         <TextBlock x:Name="DeleteS"
             Text="Удалить" 
@@ -156,20 +156,20 @@
             Width="240"
             FontWeight="Bold" 
             Foreground="White"
-            FontSize="50" Margin="613,476,0,0" 
-            FontFamily="Bahnschrift" 
+            FontSize="50" Margin="719,470,0,0" 
+            FontFamily="Comic Sans MS" 
             Cursor="Hand" MouseLeftButtonDown="DeleteS_MouseLeftButtonDown" Height="66" VerticalAlignment="Top"/>
         <TextBlock x:Name="Back_upd_s"
             Text="Назад" 
             TextDecorations="Underline" 
             TextAlignment="Center"
             TextWrapping="WrapWithOverflow"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Left"
             Width="171"
             FontWeight="Bold" 
             Foreground="White"
-            FontSize="50" Margin="0,10,31,0" 
-            FontFamily="Bahnschrift" 
+            FontSize="35" Margin="998,10,0,0" 
+            FontFamily="Comic Sans MS" 
             Cursor="Hand"  Height="62" VerticalAlignment="Top" MouseLeftButtonDown="Back_upd_s_MouseLeftButtonDown"/>
     </Grid>
 </Page>

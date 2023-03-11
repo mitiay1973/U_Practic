@@ -105,43 +105,43 @@
                FontSize="40"
                Height="60"
                Width="128"
-               Margin="0,111,0,529"
+               Margin="0,111,0,0"
                HorizontalAlignment="Center"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                  x:Name="login" 
                  TextWrapping="Wrap" 
                  TextChanged="login_TextChanged" 
                  Height="60"
                  Width="520" 
-                 Margin="340,176,340,464" 
+                 Margin="0,179,0,0" 
                  FontSize="40" 
-                 TextAlignment="Left"/>
+                 TextAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS"/>
         <Label Content="Пароль" 
                FontSize="40"
                Height="60"
                HorizontalAlignment="Center"
-               Width="150" 
-               Margin="0,236,0,404"
+               Width="172" 
+               Margin="0,244,0,0"
                Foreground="White" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
         <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" 
                      x:Name="password" 
                      HorizontalAlignment="Center" 
                      Height="60"
                      Width="520" 
-                     Margin="0,296,0,344" 
+                     Margin="0,304,0,336" 
                      FontSize="40" />
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                      x:Name="password1" 
                      HorizontalAlignment="Center" 
                      Height="60"
                      Width="520" 
-                     Margin="0,296,0,344" 
-                     FontSize="40" />
+                     Margin="0,304,0,0" 
+                     FontSize="40" VerticalAlignment="Top" FontFamily="Comic Sans MS" />
         <TextBlock x:Name="Entre"
                    Text="Вход" 
                    TextDecorations="Underline" 
@@ -151,10 +151,10 @@
                    Width="150"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="0,387,0,247" 
-                   FontFamily="Bahnschrift" 
+                   FontSize="50" Margin="0,401,0,0" 
+                   FontFamily="Comic Sans MS" 
                    MouseLeftButtonDown="Entre_MouseLeftButtonDown"
-                   Cursor="Hand"/>
+                   Cursor="Hand" Height="66" VerticalAlignment="Top"/>
 
 
         <TextBlock x:Name="Reg"
@@ -162,16 +162,16 @@
                    TextDecorations="Underline" 
                    TextAlignment="Center"
                    TextWrapping="WrapWithOverflow"
-                   HorizontalAlignment="Left"
-                   Width="299"
+                   HorizontalAlignment="Center"
+                   Width="300"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="30" Margin="437,602,0,56" 
-                   FontFamily="Bahnschrift" 
+                   FontSize="30" Margin="0,604,0,0" 
+                   FontFamily="Comic Sans MS" 
                    Cursor="Hand" 
-                   MouseLeftButtonDown="Reg_MouseLeftButtonDown"/>
-        <Image x:Name="glas" HorizontalAlignment="Left" Height="33" Margin="818,310,0,0" VerticalAlignment="Top" Width="32" Source="/str/glas.png" MouseLeftButtonDown="glas_MouseLeftButtonDown" />
-        <Image x:Name="glas_p" HorizontalAlignment="Left" Height="33" Margin="818,310,0,0" VerticalAlignment="Top" Width="32"  MouseLeftButtonDown="glas_p_MouseLeftButtonDown" Source="/str/glas_p.png" />
+                   MouseLeftButtonDown="Reg_MouseLeftButtonDown" Height="42" VerticalAlignment="Top"/>
+        <Image x:Name="glas" HorizontalAlignment="Left" Height="33" Margin="818,318,0,0" VerticalAlignment="Top" Width="32" Source="/str/glas.png" MouseLeftButtonDown="glas_MouseLeftButtonDown" />
+        <Image x:Name="glas_p" HorizontalAlignment="Left" Height="33" Margin="818,318,0,0" VerticalAlignment="Top" Width="32"  MouseLeftButtonDown="glas_p_MouseLeftButtonDown" Source="/str/glas_p.png" />
 
     </Grid>
 </Page>

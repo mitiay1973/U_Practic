@@ -111,7 +111,7 @@
                  Width="520" 
                  FontSize="40" 
                  VerticalAlignment="Top" 
-                 TextAlignment="Center" />
+                 TextAlignment="Center" FontFamily="Comic Sans MS" />
         <TextBox x:Name="password" 
                  Style="{DynamicResource TextBoxStyle1}" 
                  HorizontalAlignment="Center" 
@@ -121,7 +121,7 @@
                  Height="60" 
                  Width="520" 
                  TextChanged="password_TextChanged" 
-                 TextAlignment="Center" Margin="0,323,0,0" />
+                 TextAlignment="Center" Margin="0,323,0,0" FontFamily="Comic Sans MS" />
         <TextBlock x:Name="registration" 
                    Text="Зарегистрироваться" 
                    TextDecorations="Underline" 
@@ -133,7 +133,7 @@
                    Foreground="White" 
                    FontSize="50" 
                    Margin="0,550,0,84" 
-                   FontFamily="Bahnschrift" 
+                   FontFamily="Comic Sans MS" 
                    Cursor="Hand" 
                    MouseLeftButtonDown="registration_MouseLeftButtonDown"/>
         <TextBlock x:Name="back" 
@@ -143,12 +143,11 @@
                    TextWrapping="WrapWithOverflow" 
                    HorizontalAlignment="Left" 
                    Width="250" 
-                   Height="30" 
                    FontWeight="Bold" 
                    Foreground="White" 
                    FontSize="25" 
-                   Margin="940,620,0,50" 
-                   FontFamily="Bahnschrift" 
+                   Margin="940,620,0,44" 
+                   FontFamily="Comic Sans MS" 
                    MouseLeftButtonDown="back_Click" 
                    Cursor="Hand"/>
         <TextBox x:Name="password_Copy" 
@@ -161,7 +160,7 @@
                  Width="520" 
                  TextChanged="password_Copy_TextChanged" 
                  Margin="0,447,0,0" 
-                 TextAlignment="Center"/>
+                 TextAlignment="Center" FontFamily="Comic Sans MS"/>
         <Label Content="Логин" 
                Margin="0,133,0,0" 
                VerticalAlignment="Top" 
@@ -172,29 +171,29 @@
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Bahnschrift" TextBlock.FontFamily="Comic Sans MS"/>
         <Label Content="Пароль" 
                HorizontalAlignment="Center" 
                Margin="0,258,0,0" 
                VerticalAlignment="Top" 
                FontSize="40" 
                Height="60" 
-               Width="150" 
+               Width="176" 
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Bahnschrift" TextBlock.FontFamily="Comic Sans MS"/>
         <Label Content="Повторите пароль" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Top" 
                FontSize="40" 
                Height="60" 
-               Width="350" 
+               Width="372" 
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
                FontFamily="Bahnschrift" 
-               Margin="0,387,0,0"/>
+               Margin="0,388,0,0" TextBlock.FontFamily="Comic Sans MS"/>
         <TextBox x:Name="name" 
             Style="{DynamicResource TextBoxStyle1}" 
             HorizontalAlignment="Center" 
@@ -205,18 +204,18 @@
             Width="520" 
             FontSize="40" 
             VerticalAlignment="Top" 
-            TextAlignment="Center" />
+            TextAlignment="Center" FontFamily="Comic Sans MS" />
         <Label Content="Имя" 
             Margin="0,16,0,0" 
             VerticalAlignment="Top" 
             FontSize="40" 
             Height="60" 
-            Width="85" 
+            Width="104" 
             HorizontalAlignment="Center" 
             Foreground="White" 
             FontWeight="Normal" 
             FontStyle="Normal" 
-            FontFamily="Bahnschrift"/>
+            FontFamily="Bahnschrift" TextBlock.FontFamily="Comic Sans MS"/>
 
     </Grid>
 </Page>

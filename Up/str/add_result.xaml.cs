@@ -72,5 +72,10 @@ namespace Up
                 }
             }
         }
+
+        private void back_result(object sender, MouseButtonEventArgs e)
+        {
+            frame1.Navigate(new glavn(user, frame1));
+        }
     }
 }

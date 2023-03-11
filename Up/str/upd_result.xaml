@@ -100,68 +100,68 @@
     </Page.Resources>
 
     <Grid>
-        <Label Content="Пациент." 
+        <Label Content="Пациент:" 
                FontSize="40"
                Height="60"
-               Width="180"
-               Margin="0,68,825,0"
-               HorizontalAlignment="Right"
+               Width="191"
+               Margin="327,68,0,0"
+               HorizontalAlignment="Left"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
-        <Label Content="Услуга." 
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
+        <Label Content="Услуга:" 
                FontSize="40"
                Height="60"
-               HorizontalAlignment="Right"
-               Width="146" 
-               Margin="0,262,859,0"
+               HorizontalAlignment="Left"
+               Width="152" 
+               Margin="361,262,0,0"
                Foreground="White" 
-               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
         <TextBlock x:Name="Update_R"
                    Text="Обновить" 
                    TextDecorations="Underline" 
                    TextAlignment="Center"
                    TextWrapping="WrapWithOverflow"
-                   HorizontalAlignment="Right"
+                   HorizontalAlignment="Left"
                    Width="240"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="0,571,643,0" 
-                   FontFamily="Bahnschrift" 
+                   FontSize="50" Margin="317,571,0,0" 
+                   FontFamily="Comic Sans MS" 
                    Cursor="Hand" MouseLeftButtonDown="Update_R_MouseLeftButtonDown" Height="66" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
             x:Name="Result_Upd" 
             HorizontalAlignment="Left" 
             Height="60"
-            Width="520" 
-            Margin="511,350,0,0" 
-            FontSize="40" VerticalAlignment="Top" />
-        <Label Content="Лаборант." 
+            Width="481" 
+            Margin="550,350,0,0" 
+            FontSize="35" VerticalAlignment="Top" FontFamily="Comic Sans MS" />
+        <Label Content="Лаборант:" 
             FontSize="40"
             Height="60"
             Width="201"
-            Margin="0,162,804,0"
-            HorizontalAlignment="Right"
+            Margin="317,162,0,0"
+            HorizontalAlignment="Left"
             Foreground="White" 
             FontWeight="Normal" 
             FontStyle="Normal" 
-            FontFamily="Bahnschrift" VerticalAlignment="Top"/>
-        <Label Content="Результат." 
+            FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
+        <Label Content="Результат:" 
             FontSize="40"
-            HorizontalAlignment="Right"
-            Width="201" 
-            Margin="0,350,804,0"
+            HorizontalAlignment="Left"
+            Width="207" 
+            Margin="311,350,0,0"
             Foreground="White" 
-            FontFamily="Bahnschrift" Height="60" VerticalAlignment="Top"/>
-        <Label Content="Дата анализа." 
+            FontFamily="Comic Sans MS" Height="60" VerticalAlignment="Top"/>
+        <Label Content="Дата анализа:" 
             FontSize="40"
             Height="60"
-            HorizontalAlignment="Right"
-            Width="272" 
-            Margin="0,446,733,0"
+            HorizontalAlignment="Left"
+            Width="277" 
+            Margin="241,448,0,0"
             Foreground="White" 
-            FontFamily="Bahnschrift" VerticalAlignment="Top"/>
+            FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
         <TextBlock x:Name="Delete_R"
             Text="Удалить" 
             TextDecorations="Underline" 
@@ -170,12 +170,22 @@
             FontWeight="Bold" 
             Foreground="White"
             FontSize="50" Margin="704,571,0,0" 
-            FontFamily="Bahnschrift" 
+            FontFamily="Comic Sans MS" 
             Cursor="Hand" MouseLeftButtonDown="Delete_R_MouseLeftButtonDown" Height="66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="240"/>
-        <DatePicker Name="Date_Upd" HorizontalAlignment="Left" Margin="544,464,0,0" VerticalAlignment="Top" Height="65" Width="389"/>
-        <ComboBox Name="Patient_Upd" HorizontalAlignment="Left" Margin="550,68,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name"/>
-        <ComboBox x:Name="Laborant_Upd" HorizontalAlignment="Left" Margin="550,162,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name"/>
-        <ComboBox x:Name="Service_Upd" HorizontalAlignment="Left" Margin="550,262,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="Service1"/>
+        <DatePicker Name="Date_Upd" HorizontalAlignment="Left" FontSize="35" Margin="550,448,0,0" VerticalAlignment="Top" Height="65" Width="510" FontFamily="Comic Sans MS" BorderBrush="{x:Null}"/>
+        <ComboBox Name="Patient_Upd" HorizontalAlignment="Left" Margin="550,68,0,0"  FontSize="35" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name" FontFamily="Comic Sans MS"/>
+        <ComboBox x:Name="Laborant_Upd" HorizontalAlignment="Left" Margin="550,162,0,0"  FontSize="35" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name" FontFamily="Comic Sans MS"/>
+        <ComboBox x:Name="Service_Upd" HorizontalAlignment="Left" Margin="550,262,0,0"  FontSize="35" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="Service1" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="back_upd_rezult"
+            Text="Назад" 
+            TextDecorations="Underline" 
+            TextAlignment="Center"
+            TextWrapping="WrapWithOverflow"
+            FontWeight="Bold" 
+            Foreground="White"
+            FontSize="35" Margin="1058,10,0,0" 
+            FontFamily="Comic Sans MS" 
+            Cursor="Hand" MouseLeftButtonDown="back_upd" HorizontalAlignment="Left" Width="132" Height="50" VerticalAlignment="Top"/>
     </Grid>
 
 </Page>

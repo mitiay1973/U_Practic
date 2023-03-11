@@ -101,30 +101,30 @@
     </Page.Resources>
 
     <Grid>
-        <Label Content="Введите услугу." 
+        <Label Content="Введите услугу" 
                FontSize="40"
-               Height="60"
-               Width="294"
+               Height="74"
+               Width="326"
                Margin="186,170,0,0"
                HorizontalAlignment="Left"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                  x:Name="ServiceA" 
                  Height="60"
                  Width="520" 
-                 Margin="517,170,163,0" 
-                 FontSize="40" VerticalAlignment="Top" />
-        <Label Content="Введите цену." 
+                 Margin="517,170,0,0" 
+                 FontSize="40" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Comic Sans MS" />
+        <Label Content="Введите цену" 
                FontSize="40"
-               Height="60"
+               Height="73"
                HorizontalAlignment="Left"
-               Width="272" 
+               Width="288" 
                Margin="197,334,0,0"
                Foreground="White" 
-               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
+               FontFamily="Comic Sans MS" VerticalAlignment="Top"/>
 
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                      x:Name="PriceA" 
@@ -132,7 +132,7 @@
                      Height="60"
                      Width="520" 
                      Margin="517,334,0,0" 
-                     FontSize="40" VerticalAlignment="Top" />
+                     FontSize="40" VerticalAlignment="Top" FontFamily="Comic Sans MS" />
         <TextBlock x:Name="AddS"
                    Text="Добавить" 
                    TextDecorations="Underline" 
@@ -152,12 +152,12 @@
             TextAlignment="Center"
             TextWrapping="WrapWithOverflow"
             HorizontalAlignment="Left"
-            Width="240"
+            Width="131"
             FontWeight="Bold" 
             Foreground="White"
-            FontSize="40" Margin="960,10,0,0" 
+            FontSize="40" Margin="1059,10,0,0" 
             FontFamily="Bahnschrift"                  
-            Cursor="Hand"  Height="66" VerticalAlignment="Top" MouseLeftButtonDown="back_add_s_MouseLeftButtonDown"/>
+            Cursor="Hand"  Height="45" VerticalAlignment="Top" MouseLeftButtonDown="back_add_s_MouseLeftButtonDown"/>
     </Grid>
 
 </Page>
