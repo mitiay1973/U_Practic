@@ -44,8 +44,19 @@
                            FontFamily="Bahnschrift"
                            TextAlignment="Right"></TextBlock>
                     <ComboBox Width="225"
-                          Name="ComboType"
-                          DisplayMemberPath="Title"></ComboBox>
+                          Name="Type"
+                              SelectionChanged="ComboType_SelectionChanged"
+                          DisplayMemberPath="Service1"></ComboBox>
+                    <ComboBox Width="225"
+                          Name="Type1"
+                              SelectionChanged="ComboType_SelectionChanged"
+                          DisplayMemberPath="name">
+                    </ComboBox>
+                    <ComboBox Width="225"
+                          Name="Type2"
+                              SelectionChanged="ComboType_SelectionChanged"
+                          DisplayMemberPath="name">
+                    </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="Add"

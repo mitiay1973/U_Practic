@@ -41,6 +41,29 @@ namespace Up
             Servis.Visibility = Visibility.Collapsed;
             Add.Visibility = Visibility.Collapsed;
             history.Visibility = Visibility.Collapsed;
+            Type1.Visibility = Visibility.Collapsed;
+            Type2.Visibility = Visibility.Collapsed;
+            var all = Entities.GetContext().Service.ToList();
+            all.Insert(0, new Service
+            {
+                Service1 = "Услуга"
+            });
+            Type.ItemsSource = all;
+            Type.SelectedIndex = 0;
+            var all1 = Entities.GetContext().Workers.ToList();
+            all1.Insert(0, new Workers
+            {
+                name = "Лаборант"
+            });
+            Type1.ItemsSource = all1;
+            Type1.SelectedIndex = 0;
+            var all2 = Entities.GetContext().users.ToList();
+            all2.Insert(0, new users
+            {
+                name = "Пациент"
+            });
+            Type2.ItemsSource = all2;
+            Type2.SelectedIndex = 0;
             workers = Entities.GetContext().Workers.ToList();
             for (int i = 0; i < workers.Count; i++)
             {
@@ -88,24 +111,46 @@ namespace Up
         {
             Update();
         }
+        private async void ComboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            await Task.Delay(100);
+            Update();
+        }
         Strelki sp = new Strelki();
         private void Update()
         {
             var currentProducts = Entities.GetContext().Service.ToList();
             currentProducts = currentProducts.Where(p => p.Service1.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
-            sp.CountPage = 3;
-            sp.Countlist = currentProducts.Count;
-            LViewTours.ItemsSource = currentProducts.Skip(0).Take(sp.CountPage).ToList();
-            var currentResult = Entities.GetContext().Results.ToList();
-
-            for (int i = 0; i < currentResult.Count; i++)
+            for (int i = 0; i < currentProducts.Count; i++)
             {
-                if (currentResult[i].Workers.login != user && currentResult[i].users.login != user)
+                if (Type.SelectedIndex != 0)
                 {
-                    currentResult.RemoveAt(i);
-                    i--;
+                    if (Type.Text != currentProducts[i].Service1)
+                    {
+                        currentProducts.RemoveAt(i);
+                        i--;
+                    }
                 }
             }
+            if (LViewTours.Visibility == Visibility.Visible)
+            {
+                sp.CountPage = 3;
+                sp.Countlist = currentProducts.Count;
+            }
+            LViewTours.ItemsSource = currentProducts.Skip(0).Take(sp.CountPage).ToList();
+            var currentResult = Entities.GetContext().Results.ToList();
+            if(rol!=1)
+            {
+                for (int i = 0; i < currentResult.Count; i++)
+                {
+                    if (currentResult[i].Workers.login != user && currentResult[i].users.login != user)
+                    {
+                        currentResult.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+
             if (rol != 2)
             {
                 currentResult = currentResult.Where(p => p.Workers.name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
@@ -113,6 +158,39 @@ namespace Up
             else
             {
                 currentResult = currentResult.Where(p => p.users.name.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            }
+            if(rol==2)
+            {
+                for (int i = 0; i < currentResult.Count; i++)
+                {
+                    if (Type2.SelectedIndex != 0)
+                    {
+                        if (Type2.Text != currentResult[i].users.name)
+                        {
+                            currentResult.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
+            }
+            if (rol == 0 || rol==1)
+            {
+                for (int i = 0; i < currentResult.Count; i++)
+                {
+                    if (Type1.SelectedIndex != 0)
+                    {
+                        if (Type1.Text != currentResult[i].Workers.name)
+                        {
+                            currentResult.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
+            }
+            if (LViewresult.Visibility == Visibility.Visible)
+            {
+                sp.CountPage = 3;
+                sp.Countlist = currentResult.Count;
             }
             LViewresult.ItemsSource = currentResult.ToList();
         }
@@ -250,6 +328,7 @@ namespace Up
         {
             LViewTours.Visibility = Visibility.Hidden;
             analiz.Visibility = Visibility.Collapsed;
+            Type.Visibility = Visibility.Collapsed;
             LViewresult.Visibility = Visibility.Visible;
             Servis.Visibility = Visibility.Visible;
             result = Entities.GetContext().Results.ToList();
@@ -269,6 +348,13 @@ namespace Up
                         counts1--;
                     }
                 }
+                Type.SelectedIndex = 0;
+                Type2.Visibility = Visibility.Visible;
+            }
+            if(rol==1)
+            {
+                Type.SelectedIndex = 0;
+                Type1.Visibility = Visibility.Visible;
             }
             if (rol == 0)
             {
@@ -281,6 +367,8 @@ namespace Up
                         counts1--;
                     }
                 }
+                Type.SelectedIndex = 0;
+                Type1.Visibility = Visibility.Visible;
             }
             stack.UpdateLayout();
             Update();
@@ -293,6 +381,11 @@ namespace Up
         {
             LViewTours.Visibility = Visibility.Visible;
             analiz.Visibility = Visibility.Visible;
+            Type.Visibility = Visibility.Visible;
+            Type2.Visibility = Visibility.Collapsed;
+            Type1.SelectedIndex = 0;
+            Type2.SelectedIndex = 0;
+            Type1.Visibility = Visibility.Collapsed;
             LViewresult.Visibility = Visibility.Hidden;
             TBoxSearch.Text = "";
             Update();
