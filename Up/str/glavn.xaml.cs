@@ -31,6 +31,7 @@ namespace Up
         List<Up.Workers> workers = new List<Up.Workers>();
         List<Up.Service> services = new List<Up.Service>();
         List<Up.Results> result = new List<Up.Results>();
+        List<string> filtr = new List<string>() { "Фильтрация","До 500 руб.", "от 500 до 1000 руб.", "Больше 1000 руб." };
         public int rol = 0;
         public glavn(string User, Frame frame)
         {
@@ -43,12 +44,7 @@ namespace Up
             history.Visibility = Visibility.Collapsed;
             Type1.Visibility = Visibility.Collapsed;
             Type2.Visibility = Visibility.Collapsed;
-            var all = Entities.GetContext().Service.ToList();
-            all.Insert(0, new Service
-            {
-                Service1 = "Услуга"
-            });
-            Type.ItemsSource = all;
+            Type.ItemsSource = filtr;
             Type.SelectedIndex = 0;
             var all1 = Entities.GetContext().Workers.ToList();
             all1.Insert(0, new Workers
@@ -125,10 +121,29 @@ namespace Up
             {
                 if (Type.SelectedIndex != 0)
                 {
-                    if (Type.Text != currentProducts[i].Service1)
+                    if (Type.SelectedIndex==1)
                     {
-                        currentProducts.RemoveAt(i);
-                        i--;
+                        if (currentProducts[i].Price>=500)
+                        {
+                            currentProducts.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                    if (Type.SelectedIndex == 2)
+                    {
+                        if (currentProducts[i].Price < 500 || currentProducts[i].Price >= 1000)
+                        {
+                            currentProducts.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                    if (Type.SelectedIndex == 3)
+                    {
+                        if (currentProducts[i].Price < 1000)
+                        {
+                            currentProducts.RemoveAt(i);
+                            i--;
+                        }
                     }
                 }
             }
@@ -137,6 +152,7 @@ namespace Up
                 sp.CountPage = 3;
                 sp.Countlist = currentProducts.Count;
             }
+            services= currentProducts.ToList();
             LViewTours.ItemsSource = currentProducts.Skip(0).Take(sp.CountPage).ToList();
             var currentResult = Entities.GetContext().Results.ToList();
             if(rol!=1)
@@ -192,6 +208,7 @@ namespace Up
                 sp.CountPage = 3;
                 sp.Countlist = currentResult.Count;
             }
+            result= currentResult.ToList();
             LViewresult.ItemsSource = currentResult.ToList();
         }
 
@@ -216,7 +233,7 @@ namespace Up
                         break;
                     case "next1":
                         {
-                            List<Service> fl = Entities.GetContext().Service.ToList();
+                            List<Service> fl = services;
                             int a = fl.Count;
                             int b = Convert.ToInt32(3);
 
@@ -255,7 +272,7 @@ namespace Up
                         break;
                     case "next1":
                         {
-                            List<Results> fl = Entities.GetContext().Results.ToList();
+                            List<Results> fl = result;
                             int a = fl.Count;
                             int b = Convert.ToInt32(3);
 

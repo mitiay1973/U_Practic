@@ -104,77 +104,74 @@
                FontSize="40"
                Height="60"
                Width="180"
-               Margin="195,68,0,572"
-               HorizontalAlignment="Left"
+               Margin="0,68,825,0"
+               HorizontalAlignment="Right"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
         <Label Content="Услуга." 
                FontSize="40"
                Height="60"
-               HorizontalAlignment="Left"
+               HorizontalAlignment="Right"
                Width="146" 
-               Margin="195,262,0,378"
+               Margin="0,262,859,0"
                Foreground="White" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
         <TextBlock x:Name="Update_R"
                    Text="Обновить" 
                    TextDecorations="Underline" 
                    TextAlignment="Center"
                    TextWrapping="WrapWithOverflow"
-                   HorizontalAlignment="Left"
+                   HorizontalAlignment="Right"
                    Width="240"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="317,571,0,63" 
+                   FontSize="50" Margin="0,571,643,0" 
                    FontFamily="Bahnschrift" 
-                   Cursor="Hand" MouseLeftButtonDown="Update_R_MouseLeftButtonDown"/>
+                   Cursor="Hand" MouseLeftButtonDown="Update_R_MouseLeftButtonDown" Height="66" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
             x:Name="Result_Upd" 
             HorizontalAlignment="Left" 
             Height="60"
             Width="520" 
-            Margin="511,350,0,290" 
-            FontSize="40" />
+            Margin="511,350,0,0" 
+            FontSize="40" VerticalAlignment="Top" />
         <Label Content="Лаборант." 
             FontSize="40"
             Height="60"
             Width="201"
-            Margin="195,162,0,478"
-            HorizontalAlignment="Left"
+            Margin="0,162,804,0"
+            HorizontalAlignment="Right"
             Foreground="White" 
             FontWeight="Normal" 
             FontStyle="Normal" 
-            FontFamily="Bahnschrift"/>
+            FontFamily="Bahnschrift" VerticalAlignment="Top"/>
         <Label Content="Результат." 
             FontSize="40"
-            Height="60"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Right"
             Width="201" 
-            Margin="195,350,0,290"
+            Margin="0,350,804,0"
             Foreground="White" 
-            FontFamily="Bahnschrift"/>
+            FontFamily="Bahnschrift" Height="60" VerticalAlignment="Top"/>
         <Label Content="Дата анализа." 
             FontSize="40"
             Height="60"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Right"
             Width="272" 
-            Margin="195,446,0,194"
+            Margin="0,446,733,0"
             Foreground="White" 
-            FontFamily="Bahnschrift"/>
+            FontFamily="Bahnschrift" VerticalAlignment="Top"/>
         <TextBlock x:Name="Delete_R"
             Text="Удалить" 
             TextDecorations="Underline" 
             TextAlignment="Center"
             TextWrapping="WrapWithOverflow"
-            HorizontalAlignment="Left"
-            Width="240"
             FontWeight="Bold" 
             Foreground="White"
-            FontSize="50" Margin="704,571,0,63" 
+            FontSize="50" Margin="704,571,0,0" 
             FontFamily="Bahnschrift" 
-            Cursor="Hand" MouseLeftButtonDown="Delete_R_MouseLeftButtonDown"/>
+            Cursor="Hand" MouseLeftButtonDown="Delete_R_MouseLeftButtonDown" Height="66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="240"/>
         <DatePicker Name="Date_Upd" HorizontalAlignment="Left" Margin="544,464,0,0" VerticalAlignment="Top" Height="65" Width="389"/>
         <ComboBox Name="Patient_Upd" HorizontalAlignment="Left" Margin="550,68,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name"/>
         <ComboBox x:Name="Laborant_Upd" HorizontalAlignment="Left" Margin="550,162,0,0" VerticalAlignment="Top" Width="481" Height="60" DisplayMemberPath="name"/>

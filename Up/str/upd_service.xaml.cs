@@ -77,5 +77,10 @@ namespace Up
                 }
             }
         }
+
+        private void Back_upd_s_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frame1.Navigate(new glavn(user, frame1));
+        }
     }
 }

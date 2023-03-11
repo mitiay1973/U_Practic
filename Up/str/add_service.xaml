@@ -105,34 +105,34 @@
                FontSize="40"
                Height="60"
                Width="294"
-               Margin="186,116,0,524"
+               Margin="186,170,0,0"
                HorizontalAlignment="Left"
                Foreground="White" 
                FontWeight="Normal" 
                FontStyle="Normal" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                  x:Name="ServiceA" 
                  Height="60"
                  Width="520" 
-                 Margin="517,116,163,524" 
-                 FontSize="40" />
+                 Margin="517,170,163,0" 
+                 FontSize="40" VerticalAlignment="Top" />
         <Label Content="Введите цену." 
                FontSize="40"
                Height="60"
                HorizontalAlignment="Left"
                Width="272" 
-               Margin="197,280,0,360"
+               Margin="197,334,0,0"
                Foreground="White" 
-               FontFamily="Bahnschrift"/>
+               FontFamily="Bahnschrift" VerticalAlignment="Top"/>
 
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
                      x:Name="PriceA" 
                      HorizontalAlignment="Left" 
                      Height="60"
                      Width="520" 
-                     Margin="517,280,0,360" 
-                     FontSize="40" />
+                     Margin="517,334,0,0" 
+                     FontSize="40" VerticalAlignment="Top" />
         <TextBlock x:Name="AddS"
                    Text="Добавить" 
                    TextDecorations="Underline" 
@@ -142,10 +142,22 @@
                    Width="240"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="486,405,0,229" 
+                   FontSize="50" Margin="486,459,0,0" 
                    FontFamily="Bahnschrift" 
                   
-                   Cursor="Hand" MouseLeftButtonDown="AddS_MouseLeftButtonDown"/>
+                   Cursor="Hand" MouseLeftButtonDown="AddS_MouseLeftButtonDown" Height="66" VerticalAlignment="Top"/>
+        <TextBlock x:Name="back_add_s"
+            Text="Назад" 
+            TextDecorations="Underline" 
+            TextAlignment="Center"
+            TextWrapping="WrapWithOverflow"
+            HorizontalAlignment="Left"
+            Width="240"
+            FontWeight="Bold" 
+            Foreground="White"
+            FontSize="40" Margin="960,10,0,0" 
+            FontFamily="Bahnschrift"                  
+            Cursor="Hand"  Height="66" VerticalAlignment="Top" MouseLeftButtonDown="back_add_s_MouseLeftButtonDown"/>
     </Grid>
 
 </Page>
