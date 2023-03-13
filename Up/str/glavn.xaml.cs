@@ -38,9 +38,11 @@ namespace Up
         string path;
         List<string> filtr = new List<string>() { "Фильтрация","До 500 руб.", "от 500 до 1000 руб.", "Больше 1000 руб." };
         public int rol = 0;
+        public int ss = 1;
         public glavn(string User, Frame frame, int sh)
         {
             services1 = Entities.GetContext().Service.ToList();
+            ss = sh;
 
                 for (int i = 0; i < services1.Count; i++)
                 {
@@ -244,7 +246,6 @@ namespace Up
             result= currentResult.ToList();
             LViewresult.ItemsSource = currentResult.ToList();
         }
-
 
 
         private void GoPage_MouseDown(object sender, MouseButtonEventArgs e)
@@ -473,6 +474,34 @@ namespace Up
                 object itemm = LViewresult.SelectedItem;
                 frame1.Navigate(new upd_result(user, frame1, itemm));
             }
+        }
+
+        private void LViewTours_MouseEnter(object sender, MouseEventArgs e)
+        {
+            services = Entities.GetContext().Service.ToList();
+
+            for (int i = 0; i < services.Count; i++)
+            {
+                try
+                {
+                    BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Code128, Convert.ToString(services[i].id));
+                    var imageType = "Png";
+                    // установить разрешение
+                    generator.Parameters.Resolution = 400;
+                    imagePath = "barcode" + (services[i].id) + ".Png";
+                    path = System.IO.Path.GetFullPath(imagePath);
+                    // сгенерировать штрих-код          
+                    generator.Save(imagePath, BarCodeImageFormat.Png);
+                    services[i].barcode = path;
+                    Entities.GetContext().SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            sp.Countlist = services.Count;
+            LViewTours.ItemsSource = services.Skip(sp.CurrentPage * sp.CountPage - sp.CountPage).Take(sp.CountPage).ToList();
         }
     }
 }

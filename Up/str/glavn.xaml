@@ -103,7 +103,7 @@ x:Name="LViewTours"
 ItemsSource="{Binding Service}"
 Margin="0,32,0,86"
 Visibility="Visible"
-Cursor="Hand" >
+Cursor="Hand" MouseEnter="LViewTours_MouseEnter" >
 
 
                 <ListView.ItemContainerStyle>
