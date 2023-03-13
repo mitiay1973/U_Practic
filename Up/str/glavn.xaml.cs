@@ -120,10 +120,9 @@ namespace Up
             _timer.Tick += new EventHandler(Timer_Tick);
             _timer.Start();
             int count = Entities.GetContext().Service.Count();
-            services = Entities.GetContext().Service.ToList();
             sp.CountPage = 3;
             sp.Countlist = count;
-            LViewTours.ItemsSource = services.Skip(0).Take(sp.CountPage).ToList();
+            LViewTours.ItemsSource = services1.Skip(0).Take(sp.CountPage).ToList();
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -139,7 +138,7 @@ namespace Up
         {
             for (int i = 0; i < services1.Count; i++)
             {
-                imagePath = "barcode" + i + ".Png";
+                imagePath = "barcode" + services1[i].id + ".Png";
                 string path = System.IO.Path.GetFullPath(imagePath);
                 services1[i].barcode = path;
                 Entities.GetContext().SaveChanges();

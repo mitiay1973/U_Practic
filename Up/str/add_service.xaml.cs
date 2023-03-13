@@ -30,7 +30,7 @@ namespace Up
             user = User;
         }
 
-        private void AddS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private async void AddS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(ServiceA.Text!="" && PriceA.Text!="")
             {
@@ -41,16 +41,19 @@ namespace Up
                     services1 = Entities.GetContext().Service.ToList();
                     services[0].Service1 = ServiceA.Text;
                     services[0].Price = Convert.ToDouble(PriceA.Text);
+                    Entities.GetContext().Service.Add(services[0]);
+                    Entities.GetContext().SaveChanges();
+                    await Task.Delay(500);
+                    services1 = Entities.GetContext().Service.ToList();
                     BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Code128, Convert.ToString(services1.Last().id + 1));
                     var imageType = "Png";
                     // установить разрешение
                     generator.Parameters.Resolution = 400;
-                    string imagePath = "barcode" + (services1.Last().id+1) + ".Png";
+                    string imagePath = "barcode" + (services1.Last().id) + ".Png";
                     string path = System.IO.Path.GetFullPath(imagePath);
                     // сгенерировать штрих-код          
                     generator.Save(imagePath, BarCodeImageFormat.Png);
-                    services[0].barcode = path;
-                    Entities.GetContext().Service.Add(services[0]);
+                    services1.Last().barcode = path;
                     Entities.GetContext().SaveChanges();
                     frame1.Navigate(new glavn(user,frame1,1));
                 }
