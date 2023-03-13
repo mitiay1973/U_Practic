@@ -86,7 +86,7 @@ namespace Up
                                     }
                                     Entities.GetContext().history.Add(history_login[0]);
                                     Entities.GetContext().SaveChanges();
-                                    frame1.Navigate(new glavn(worker[i].login, frame1));
+                                    frame1.Navigate(new glavn(worker[i].login, frame1,0));
                                     break;
                                 }
                                 else
@@ -113,7 +113,7 @@ namespace Up
                                 history_login[0].block = date.AddHours(2.5);
                             Entities.GetContext().history.Add(history_login[0]);
                             Entities.GetContext().SaveChanges();
-                            frame1.Navigate(new glavn(worker[i].login, frame1));
+                            frame1.Navigate(new glavn(worker[i].login, frame1,0));
                             break;
                         }
                     }
@@ -154,7 +154,7 @@ namespace Up
                                     }
                                     Entities.GetContext().history.Add(history_login[0]);
                                     Entities.GetContext().SaveChanges();
-                                    frame1.Navigate(new glavn(user, frame1));
+                                    frame1.Navigate(new glavn(user, frame1, 0));
                                     break;
                                 }
                                 else
@@ -181,7 +181,7 @@ namespace Up
                                 history_login[0].block = date.AddHours(2.5);
                             Entities.GetContext().history.Add(history_login[0]);
                             Entities.GetContext().SaveChanges();
-                            frame1.Navigate(new glavn(user, frame1));
+                            frame1.Navigate(new glavn(user, frame1,0));
                             break;
                         }
                     }

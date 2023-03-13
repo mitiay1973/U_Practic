@@ -54,7 +54,7 @@ namespace Up
                             services[i].Service1 = Service_Upd.Text;
                             services[i].Price = Convert.ToDouble(Price_upd.Text);
                             Entities.GetContext().SaveChanges();
-                            frame1.Navigate(new glavn(user, frame1));
+                            frame1.Navigate(new glavn(user, frame1,1));
                         }
                     }
                 }
@@ -73,14 +73,14 @@ namespace Up
                 {
                     Entities.GetContext().Service.Remove(services[i]);
                     Entities.GetContext().SaveChanges();
-                    frame1.Navigate(new glavn(user, frame1));
+                    frame1.Navigate(new glavn(user, frame1,1));
                 }
             }
         }
 
         private void Back_upd_s_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            frame1.Navigate(new glavn(user, frame1));
+            frame1.Navigate(new glavn(user, frame1,1));
         }
     }
 }

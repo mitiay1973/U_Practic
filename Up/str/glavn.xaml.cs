@@ -37,21 +37,24 @@ namespace Up
         string imagePath;
         List<string> filtr = new List<string>() { "Фильтрация","До 500 руб.", "от 500 до 1000 руб.", "Больше 1000 руб." };
         public int rol = 0;
-        public glavn(string User, Frame frame)
+        public glavn(string User, Frame frame, int sh)
         {
             services1 = Entities.GetContext().Service.ToList();
-            for (int i = 0; i < services1.Count; i++)
+            if(sh==0)
             {
-                BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Code128, Convert.ToString(services1[i].id));
-                var imageType = "Png";
-                // установить разрешение
-                generator.Parameters.Resolution = 400;
-                imagePath = "barcode" + i + ".Png";
-                string path = System.IO.Path.GetFullPath(imagePath);
-                // сгенерировать штрих-код          
-                generator.Save(imagePath, BarCodeImageFormat.Png);
-                services1[i].barcode = path;
-                Entities.GetContext().SaveChanges();
+                for (int i = 0; i < services1.Count; i++)
+                {
+                    BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Code128, Convert.ToString(services1[i].id));
+                    var imageType = "Png";
+                    // установить разрешение
+                    generator.Parameters.Resolution = 400;
+                    imagePath = "barcode" + i + ".Png";
+                    string path = System.IO.Path.GetFullPath(imagePath);
+                    // сгенерировать штрих-код          
+                    generator.Save(imagePath, BarCodeImageFormat.Png);
+                    services1[i].barcode = path;
+                    Entities.GetContext().SaveChanges();
+                }
             }
             InitializeComponent();
             frame1 = frame;

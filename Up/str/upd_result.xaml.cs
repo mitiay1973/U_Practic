@@ -80,7 +80,7 @@ namespace Up
                             results[i].result = Result_Upd.Text;
                             results[i].date = Convert.ToDateTime(Date_Upd.Text);
                             Entities.GetContext().SaveChanges();
-                            frame1.Navigate(new glavn(user, frame1));
+                            frame1.Navigate(new glavn(user, frame1,1));
                         }
                     }
 
@@ -100,14 +100,14 @@ namespace Up
                 {
                     Entities.GetContext().Results.Remove(results[i]);
                     Entities.GetContext().SaveChanges();
-                    frame1.Navigate(new glavn(user, frame1));
+                    frame1.Navigate(new glavn(user, frame1,1));
                 }
             }
         }
 
         private void back_upd(object sender, MouseButtonEventArgs e)
         {
-            frame1.Navigate(new glavn(user, frame1));
+            frame1.Navigate(new glavn(user, frame1,1));
         }
     }
 }

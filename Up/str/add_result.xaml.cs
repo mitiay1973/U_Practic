@@ -64,7 +64,7 @@ namespace Up
                     results[0].date = Convert.ToDateTime(Date_Add.Text);
                     Entities.GetContext().Results.Add(results[0]);
                     Entities.GetContext().SaveChanges();
-                    frame1.Navigate(new glavn(user, frame1));
+                    frame1.Navigate(new glavn(user, frame1,1));
                 }
                 catch (Exception)
                 {
@@ -75,7 +75,7 @@ namespace Up
 
         private void back_result(object sender, MouseButtonEventArgs e)
         {
-            frame1.Navigate(new glavn(user, frame1));
+            frame1.Navigate(new glavn(user, frame1,1));
         }
     }
 }

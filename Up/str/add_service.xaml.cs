@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aspose.BarCode.Generation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,11 +37,22 @@ namespace Up
                 try
                 {
                     List<Service> services = new List<Service> { new Service() };
+                    List<Service> services1 = new List<Service> { new Service() };
+                    services1 = Entities.GetContext().Service.ToList();
                     services[0].Service1 = ServiceA.Text;
                     services[0].Price = Convert.ToDouble(PriceA.Text);
+                    BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Code128, Convert.ToString(services1.Last().id + 1));
+                    var imageType = "Png";
+                    // установить разрешение
+                    generator.Parameters.Resolution = 400;
+                    string imagePath = "barcode" + (services1.Last().id + 1) + ".Png";
+                    string path = System.IO.Path.GetFullPath(imagePath);
+                    // сгенерировать штрих-код          
+                    generator.Save(imagePath, BarCodeImageFormat.Png);
+                    services[0].barcode = path;
                     Entities.GetContext().Service.Add(services[0]);
                     Entities.GetContext().SaveChanges();
-                    frame1.Navigate(new glavn(user,frame1));
+                    frame1.Navigate(new glavn(user,frame1,1));
                 }
                 catch(Exception)
                 {
@@ -51,7 +63,7 @@ namespace Up
 
         private void back_add_s_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            frame1.Navigate(new glavn(user, frame1));
+            frame1.Navigate(new glavn(user, frame1,1));
         }
     }
 }
