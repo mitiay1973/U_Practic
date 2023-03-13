@@ -41,9 +41,10 @@ namespace Up
         public glavn(string User, Frame frame, int sh)
         {
             services1 = Entities.GetContext().Service.ToList();
-            if(sh==0)
-            {
+
                 for (int i = 0; i < services1.Count; i++)
+                {
+                try
                 {
                         BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Code128, Convert.ToString(services1[i].id));
                         var imageType = "Png";
@@ -56,7 +57,11 @@ namespace Up
                         services1[i].barcode = path;
                         Entities.GetContext().SaveChanges();
                 }
-            }
+                catch(Exception)
+                {
+
+                }
+                }
             InitializeComponent();
             frame1 = frame;
             user = User;
