@@ -45,7 +45,7 @@ namespace Up
                     var imageType = "Png";
                     // установить разрешение
                     generator.Parameters.Resolution = 400;
-                    string imagePath = "barcode" + (services1.Last().id + 1) + ".Png";
+                    string imagePath = "barcode" + (services1.Last().id+1) + ".Png";
                     string path = System.IO.Path.GetFullPath(imagePath);
                     // сгенерировать штрих-код          
                     generator.Save(imagePath, BarCodeImageFormat.Png);
