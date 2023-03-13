@@ -136,7 +136,8 @@ HorizontalAlignment="Stretch" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                                 <StackPanel Grid.Column="1"
 Margin="15"
 Orientation="Horizontal">
-                                    <Image Source="/Image/zagl.jpg"
+                                    <Image 
+                                           Source="{Binding barcode}"
 Height="100" Width="160"
 HorizontalAlignment="Left"/>
                                     <StackPanel Grid.Column="1"

@@ -33,6 +33,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Service" Type="nvarchar(max)" />
           <Property Name="Price" Type="float" />
+          <Property Name="barcode" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -149,6 +150,7 @@
           <Property Name="Service1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Double" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_Service" FromRole="Service" ToRole="Results" />
+          <Property Name="barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -272,6 +274,7 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="P_prakt_SorokinModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Service1" ColumnName="Service" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
