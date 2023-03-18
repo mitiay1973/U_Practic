@@ -236,6 +236,7 @@ FontSize="30"/>
                 <TextBlock Name="txtNext1" Uid="next1" Text=" &gt;&gt;" MouseDown="GoPage_MouseDown" FontSize="20"/>
             </StackPanel>
             <Button x:Name="history" Content="История входа" HorizontalAlignment="Left" Margin="10,636,0,0" VerticalAlignment="Top" Click="history_Click" Background="#FFC6D7FF" BorderBrush="Black"/>
+            <Button x:Name="Grapf" Content="Графики" HorizontalAlignment="Left" Margin="110,636,0,0" VerticalAlignment="Top"  Background="#FFC6D7FF" BorderBrush="Black" Click="Grapf_Click"/>
         </Grid>
     </Grid>
 </Page>
