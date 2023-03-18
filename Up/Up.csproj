@@ -69,6 +69,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Print.xaml.cs">
+      <DependentUpon>Print.xaml</DependentUpon>
+    </Compile>
     <Compile Include="str\add_result.xaml.cs">
       <DependentUpon>add_result.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Compile Include="Workers.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
+    <Page Include="Print.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="str\add_result.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +240,7 @@
       <DependentUpon>Base.edmx</DependentUpon>
       <LastGenOutput>Base.cs</LastGenOutput>
     </Content>
+    <Resource Include="print.jpg" />
     <Resource Include="str\glas_p.png" />
     <Resource Include="str\glas.png" />
     <Resource Include="glas_p.png" />

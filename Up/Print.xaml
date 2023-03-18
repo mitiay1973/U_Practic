@@ -1,0 +1,26 @@
+﻿<Window x:Class="Up.Print"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Up"
+        mc:Ignorable="d"
+        Title="Print" Height="700" Width="1200" Background="#FFC6D7FF">
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="565" VerticalAlignment="Top" Width="1200" Source="/print.jpg"/>
+        <TextBox x:Name="NamePrint" FontSize="20" HorizontalAlignment="Left" Margin="304,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="48" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="DatePrint"  FontSize="20" HorizontalAlignment="Left" Margin="698,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" BorderBrush="{x:Null}" Height="26" IsEnabled="False"/>
+        <TextBox x:Name="PricePrint"  FontSize="20" HorizontalAlignment="Left" Margin="600,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="35" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox  HorizontalAlignment="Left"  FontSize="20" Margin="698,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Height="35"  BorderBrush="{x:Null}" IsEnabled="False" RenderTransformOrigin="0.506,0.251" Text="0,00 руб." Foreground="Black"/>
+        <TextBox  HorizontalAlignment="Left"  FontSize="20" Margin="968,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Height="35"  BorderBrush="{x:Null}" IsEnabled="False" RenderTransformOrigin="0.506,0.251" Text="0,00 руб." Foreground="Black"/>
+        <TextBox  HorizontalAlignment="Left"  FontSize="20" Margin="909,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="19" Height="35"  BorderBrush="{x:Null}" IsEnabled="False" RenderTransformOrigin="0.506,0.251" Text="1" Foreground="Black"/>
+        <TextBox x:Name="PricePrint_Copy"  FontSize="20" HorizontalAlignment="Left" Margin="800,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="35" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="PricePrint_Copy1"  FontSize="20" HorizontalAlignment="Left" Margin="1096,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="35" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="PricePrint_Copy2"  FontSize="20" HorizontalAlignment="Left" Margin="1072,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="35" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="PricePrint_Copy3"  FontSize="20" HorizontalAlignment="Left" Margin="1070,461,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="35" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="Patient"  FontSize="20" HorizontalAlignment="Left" Margin="340,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="48" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="IdPrint"  FontSize="20" HorizontalAlignment="Left" Margin="94,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" Height="48" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <Button x:Name="Print_Otpr" FontSize="25" Content="Печать" HorizontalAlignment="Center" Margin="0,540,0,0" VerticalAlignment="Top" Height="46" Width="204" Background="#FFC6D7FF" BorderBrush="{x:Null}" Click="Print_Otpr_Click"/>
+
+    </Grid>
+</Window>

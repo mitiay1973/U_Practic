@@ -109,5 +109,11 @@ namespace Up
         {
             frame1.Navigate(new glavn(user, frame1,1));
         }
+
+        private void Print_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Print print = new Print(item);
+            print.Show();
+        }
     }
 }

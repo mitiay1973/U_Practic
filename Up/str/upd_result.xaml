@@ -127,7 +127,7 @@
                    Width="240"
                    FontWeight="Bold" 
                    Foreground="White"
-                   FontSize="50" Margin="317,571,0,0" 
+                   FontSize="50" Margin="141,571,0,0" 
                    FontFamily="Comic Sans MS" 
                    Cursor="Hand" MouseLeftButtonDown="Update_R_MouseLeftButtonDown" Height="66" VerticalAlignment="Top"/>
         <TextBox Style="{DynamicResource TextBoxStyle1}" 
@@ -169,7 +169,7 @@
             TextWrapping="WrapWithOverflow"
             FontWeight="Bold" 
             Foreground="White"
-            FontSize="50" Margin="704,571,0,0" 
+            FontSize="50" Margin="830,571,0,0" 
             FontFamily="Comic Sans MS" 
             Cursor="Hand" MouseLeftButtonDown="Delete_R_MouseLeftButtonDown" Height="66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="240"/>
         <DatePicker Name="Date_Upd" HorizontalAlignment="Left" FontSize="35" Margin="550,448,0,0" VerticalAlignment="Top" Height="65" Width="510" FontFamily="Comic Sans MS" BorderBrush="{x:Null}"/>
@@ -186,6 +186,18 @@
             FontSize="35" Margin="1058,10,0,0" 
             FontFamily="Comic Sans MS" 
             Cursor="Hand" MouseLeftButtonDown="back_upd" HorizontalAlignment="Left" Width="132" Height="50" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Prints"
+            Text="Печать" 
+            TextDecorations="Underline" 
+            TextAlignment="Center"
+            TextWrapping="WrapWithOverflow"
+            HorizontalAlignment="Left"
+            Width="240"
+            FontWeight="Bold" 
+            Foreground="White"
+            FontSize="50" Margin="506,571,0,0" 
+            FontFamily="Comic Sans MS" 
+            Cursor="Hand"  Height="66" VerticalAlignment="Top" MouseLeftButtonDown="Print_MouseLeftButtonDown"/>
     </Grid>
 
 </Page>
