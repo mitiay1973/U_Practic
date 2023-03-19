@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Up"
         mc:Ignorable="d"
-        Title="Diagram" Height="450" Width="800">
+        Title="Графики" Height="450" Width="800" Icon="/logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="GridForChart" Grid.Column="1" Background="LightGray"  />
-        <Button Content="BarChat" Grid.Column="0" Name="BarsButton" Margin="10,29,10,0" VerticalAlignment="Top" Click="ChartsButton_Click" Height="25"/>
-        <Button Content="LineChart" Grid.Column="0" Name="LineButton" Margin="10,65,10,0" VerticalAlignment="Top" Click="ChartsButton_Click" Height="25"/>
-        <Button Content="PieChart" Grid.Column="0" Name="PieButton" Margin="10,100,10,0" VerticalAlignment="Top" Click="ChartsButton_Click" Height="25"/>
+        <Button Content="Столбчатая" Grid.Column="0" Name="BarsButton" Margin="10,29,10,0" VerticalAlignment="Top" Click="ChartsButton_Click" Height="25"/>
+        <Button Content="Линейная" Grid.Column="0" Name="LineButton" Margin="10,65,10,0" VerticalAlignment="Top" Click="ChartsButton_Click" Height="25"/>
+        <Button Content="Круговая" Grid.Column="0" Name="PieButton" Margin="10,100,10,0" VerticalAlignment="Top" Click="ChartsButton_Click" Height="25"/>
     </Grid>
 </Window>

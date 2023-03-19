@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Up"
         mc:Ignorable="d"
-        Title="Print" Height="700" Width="1200" Background="#FFC6D7FF">
+        Title="Печать" Height="700" Width="1200" Background="#FFC6D7FF" Icon="/logo.png">
     <Grid>
         <Image HorizontalAlignment="Center" Height="565" VerticalAlignment="Top" Width="1200" Source="/print.jpg"/>
         <TextBox x:Name="NamePrint" FontSize="20" HorizontalAlignment="Left" Margin="304,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="48" BorderBrush="{x:Null}" IsEnabled="False"/>
