@@ -37,9 +37,16 @@ namespace Up
             PricePrint_Copy3.Text = Convert.ToString(results[0].Service.Price);
         }
 
-        private void Print_Otpr_Click(object sender, RoutedEventArgs e)
+        private async void Print_Otpr_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Отправлено на печать");
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                Print_Otpr.Visibility=Visibility.Collapsed;
+                await Task.Delay(1000);
+                printDialog.PrintVisual(printGrid, "Распечатываем отчет по услуге");
+            }
             Close();
         }
     }

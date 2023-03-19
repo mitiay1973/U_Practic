@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Up"
         mc:Ignorable="d"
         Title="Печать" Height="700" Width="1200" Background="#FFC6D7FF" Icon="/logo.png">
-    <Grid>
+    <Grid x:Name="printGrid">
         <Image HorizontalAlignment="Center" Height="565" VerticalAlignment="Top" Width="1200" Source="/print.jpg"/>
         <TextBox x:Name="NamePrint" FontSize="20" HorizontalAlignment="Left" Margin="304,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="48" BorderBrush="{x:Null}" IsEnabled="False"/>
         <TextBox x:Name="DatePrint"  FontSize="20" HorizontalAlignment="Left" Margin="698,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" BorderBrush="{x:Null}" Height="26" IsEnabled="False"/>
