@@ -73,6 +73,7 @@ namespace Up
             history.Visibility = Visibility.Collapsed;
             Type1.Visibility = Visibility.Collapsed;
             Type2.Visibility = Visibility.Collapsed;
+            Grapf.Visibility = Visibility.Collapsed;
             Type.ItemsSource = filtr;
             Type.SelectedIndex = 0;
             var all1 = Entities.GetContext().Workers.ToList();
@@ -96,6 +97,7 @@ namespace Up
                 {
                     history.Visibility = Visibility.Visible;
                     Add.Visibility = Visibility.Visible;
+                    Grapf.Visibility = Visibility.Visible;
                     rol = 1;
                 }
                 if (workers[i].login == user && workers[i].dolgnost == "Лаборант")
@@ -508,6 +510,11 @@ namespace Up
         {
             Diagram diagram = new Diagram();
             diagram.Show();
+        }
+
+        private void Back_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frame1.Navigate(new avtoriz(frame1));
         }
     }
 }

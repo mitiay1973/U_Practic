@@ -95,7 +95,7 @@
                            FontWeight="Bold" 
                            TextDecorations="Underline"
                            Foreground="White" 
-                           Cursor="Hand" />
+                           Cursor="Hand" MouseLeftButtonDown="Back_MouseLeftButtonDown" />
                 </StackPanel>
             </WrapPanel>
             <ListView Grid.Row="1"
