@@ -39,7 +39,6 @@ namespace Up
 
         private async void Print_Otpr_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Отправлено на печать");
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == true)
             {
