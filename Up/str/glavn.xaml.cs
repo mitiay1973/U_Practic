@@ -504,6 +504,7 @@ namespace Up
             }
             sp.Countlist = services.Count;
             LViewTours.ItemsSource = services.Skip(sp.CurrentPage * sp.CountPage - sp.CountPage).Take(sp.CountPage).ToList();
+            Update();
         }
 
         private void Grapf_Click(object sender, RoutedEventArgs e)
